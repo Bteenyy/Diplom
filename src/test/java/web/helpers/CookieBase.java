@@ -1,6 +1,5 @@
 package web.helpers;
 
-import api.LoginWithApi;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
