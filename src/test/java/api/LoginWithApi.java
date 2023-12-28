@@ -2,7 +2,7 @@ package api;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import models.SuccessfulRegisterBodyModel;
+import web.helpers.models.SuccessfulRegisterBodyModel;
 
 import static io.restassured.RestAssured.given;
 import static spec.RegAndResSpec.*;

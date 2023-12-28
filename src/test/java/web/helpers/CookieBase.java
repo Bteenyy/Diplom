@@ -1,4 +1,4 @@
-package helpers;
+package web.helpers;
 
 import api.LoginWithApi;
 import io.restassured.response.Response;
