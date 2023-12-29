@@ -1,10 +1,10 @@
-package api.specs;
+package web.specs;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import static api.helpers.CustomAllureListener.withCustomTemplates;
+import static web.helpers.CustomAllureListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
 import static io.restassured.filter.log.LogDetail.STATUS;
@@ -16,9 +16,7 @@ public class Spec {
             .filter(withCustomTemplates())
             .log().uri()
             .log().body()
-            .contentType(JSON)
-            .baseUri("https://reqres.in")
-            .basePath("/api");
+            .contentType(JSON);
 
     public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
             .log(STATUS)
