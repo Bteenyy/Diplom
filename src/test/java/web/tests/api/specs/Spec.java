@@ -12,13 +12,13 @@ import static io.restassured.http.ContentType.JSON;
 
 public class Spec {
 
-    public static RequestSpecification LoginTestRequestSpec = with()
+    public static RequestSpecification loginTestRequestSpec = with()
             .filter(withCustomTemplates())
             .log().uri()
             .log().body()
             .contentType(JSON);
 
-    public static ResponseSpecification LoginTestResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification loginTestResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .build();

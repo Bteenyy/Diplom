@@ -6,5 +6,9 @@ import lombok.Data;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public @Data class LoginBodyModel {
-    private String email, password;
+    String email, password;
+    public LoginBodyModel(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
 }
