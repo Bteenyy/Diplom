@@ -16,6 +16,7 @@ public class AccountPageTest extends TestBase {
     void successfulLoginTest() {
         homePage.homePageOpen()
                 .enterButtonClick();
+        accountPage.accountDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
 
     }
 }

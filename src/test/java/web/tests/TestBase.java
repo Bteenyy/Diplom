@@ -10,4 +10,5 @@ public class TestBase {
     static void beforeAff() {
         RestAssured.baseURI = "https://api.deeray.com";
         Configuration.baseUrl = "https://deeray.com/";
+        Configuration.pageLoadStrategy = "eager";
 }}

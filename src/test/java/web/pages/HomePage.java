@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class HomePage {
-    SelenideElement enterButton = $(".header-login");
+    SelenideElement enterButton = $("div[class='header-login'] a");
 
     public HomePage homePageOpen() {
         open("");
