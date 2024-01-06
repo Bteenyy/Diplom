@@ -8,7 +8,7 @@ import static web.tests.api.specs.Spec.loginTestRequestSpec;
 import static web.tests.api.specs.Spec.loginTestResponseSpec;
 
 public class AuthorizationApi {
-    public AuthorizationResponseModel login(AuthorizationRequestModel loginBodyModel) {
+    public AuthorizationResponseModel authorization(AuthorizationRequestModel loginBodyModel) {
         return given(loginTestRequestSpec)
                 .body(loginBodyModel)
                 .when()

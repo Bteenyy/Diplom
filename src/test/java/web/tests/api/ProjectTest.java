@@ -14,16 +14,16 @@ import static web.tests.api.specs.Spec.loginTestResponseSpec;
 
 public class ProjectTest extends TestBase {
     AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
-    CreateProjectRequestModel createProjectBodyModel = new CreateProjectRequestModel("diplom","qa.quru");
+    CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel("Diplom", "qa.quru");
     AuthorizationApi authorizationApi = new AuthorizationApi();
-    AuthorizationResponseModel authorizationResponseModel = authorizationApi.login(loginBodyModel);
+    AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
+
     @Test
     void createProjectTest() {
-
         CreateProjectResponseModel response =
                 given(loginTestRequestSpec)
                         .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                        .body(createProjectBodyModel)
+                        .body(createProjectRequestModel)
                         .when()
                         .post("/v2/workspace/create")
                         .then()
@@ -32,18 +32,20 @@ public class ProjectTest extends TestBase {
                         .extract().as(CreateProjectResponseModel.class);
         assertEquals(response.getData().getItem().getName(), "qa.quru");
     }
+
     @Test
-    void deleteProjectTest() {
+    void createProjectTestWithoutWorkspace() {
         CreateProjectResponseModel response =
                 given(loginTestRequestSpec)
                         .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                        .body(createProjectBodyModel)
+                        .body(createProjectRequestModel)
                         .when()
-                        .delete("/v2/workspace")
+                        .post("/v2/workspace/create")
                         .then()
                         .spec(loginTestResponseSpec)
                         .statusCode(200)
                         .extract().as(CreateProjectResponseModel.class);
         assertEquals(response.getData().getItem().getName(), "qa.quru");
     }
+
 }
