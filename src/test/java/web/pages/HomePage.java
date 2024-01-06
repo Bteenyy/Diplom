@@ -1,8 +1,19 @@
 package web.pages;
 
-import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class HomePage {
-    @Test
-    void
+    SelenideElement enterButton = $(".header-login");
+
+    public HomePage homePageOpen() {
+        open("");
+        return this;
+    }
+    public HomePage enterButtonClick() {
+        enterButton.click();
+        return this;
+    }
 }
