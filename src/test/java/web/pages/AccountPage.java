@@ -1,18 +1,17 @@
 package web.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class AccountPage {
-SelenideElement emailInput = $("input[placeholder='Email']"),
-    passwordInput = $("input[type='password']"),
-    loginBut= $("button");
-    public AccountPage accountDataInput(String email, String password) {
-        emailInput.setValue(email);
-        passwordInput.setValue(password);
-        loginBut.click();
+    SelenideElement checkSuccessfulLogin = $("div[class='View-sc-qqgzek-0 MenuItemStyled-sc-11xrj9h-0 clQVJy']");
+
+    public AccountPage checkSuccessfulLogin(String email) {
+        checkSuccessfulLogin.shouldHave(text(email));
         return this;
     }
 }

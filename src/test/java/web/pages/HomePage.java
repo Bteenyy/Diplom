@@ -12,6 +12,7 @@ public class HomePage {
         open("");
         return this;
     }
+
     public HomePage enterButtonClick() {
         enterButton.click();
         return this;
