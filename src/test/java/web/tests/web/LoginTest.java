@@ -22,7 +22,7 @@ public class LoginTest extends TestBase {
     void unsuccessfulLoginTest() {
         homePage.homePageOpen()
                 .enterButtonClick();
-        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_1")
+        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "12314")
                 .errorMessage();
     }
 }
