@@ -11,11 +11,13 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 import static web.tests.api.specs.Spec.loginTestRequestSpec;
 import static web.tests.api.specs.Spec.loginTestResponseSpec;
+
 @Tag("api")
 public class LoginTest extends TestBase {
     AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
     AuthorizationApi authorizationApi = new AuthorizationApi();
     AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
+
     @Test
     @Story("Testing of successful login using method POST")
     @Tag("positive")
@@ -48,6 +50,7 @@ public class LoginTest extends TestBase {
         assertFalse(responseModel.getMessage().isEmpty());
         assertEquals(responseModel.getCode(), 101);
     }
+
     @Test
     void LogoutTest() {
         AuthorizationResponseModel responseModel =

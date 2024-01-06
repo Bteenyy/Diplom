@@ -16,7 +16,7 @@ public class Spec {
             .filter(withCustomTemplates())
             .log().uri()
             .log().body()
-            .contentType(JSON);
+            .contentType("application/json");
 
     public static ResponseSpecification loginTestResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)

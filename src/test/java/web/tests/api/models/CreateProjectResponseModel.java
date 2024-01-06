@@ -7,6 +7,7 @@ import lombok.Data;
 public @Data class CreateProjectResponseModel {
     CreateData data;
     String message;
+    int code;
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public @Data
