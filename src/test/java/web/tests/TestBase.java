@@ -1,4 +1,4 @@
-package web.tests.api;
+package web.tests;
 
 import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;

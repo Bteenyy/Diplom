@@ -2,6 +2,7 @@ package web.tests.api;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import web.tests.TestBase;
 import web.tests.api.api.AuthorizationApi;
 import web.tests.api.models.AuthorizationResponseModel;
 import web.tests.api.models.CreateProjectResponseModel;
