@@ -1,9 +1,11 @@
 package web.tests.web;
 
 import org.junit.jupiter.api.Test;
-import web.pages.AccountPage;
-import web.pages.LoginPage;
-import web.pages.HomePage;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import web.tests.web.pages.AccountPage;
+import web.tests.web.pages.LoginPage;
+import web.tests.web.pages.HomePage;
 import web.tests.TestBase;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -19,15 +21,25 @@ public class DeerayTest extends TestBase {
         homePage.homePageOpen()
                 .enterButtonClick();
         loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
-        accountPage.checkSuccessfulLogin("rasitsahbutdinov915455@gmail.com");
+        accountPage.checkSuccessfulLogin("rasitsahbutdinov915455@gmail.com")
+                .logOut();
+    }
+
+
+    @ValueSource(strings = {"Продукты", "О компании", "Исследования", "Вакансии", "Контакты"})
+    @ParameterizedTest(name = "В навигационном панели присутствует элемент {0} для запроса {0}")
+    void homeNavTest(String category) {
+        homePage.homePageOpen()
+                .navListCheck(category);
     }
 
     @Test
     void unsuccessfulLoginTest() {
         homePage.homePageOpen()
                 .enterButtonClick();
-        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_1")
+        loginPage.loginDataInput("12313", "123123")
                 .errorMessage();
     }
+
 
 }

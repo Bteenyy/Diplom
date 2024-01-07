@@ -1,6 +1,5 @@
-package web.pages;
+package web.tests.web.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -8,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage {
-    SelenideElement emailInput = $("input[placeholder='Email']"),
+    SelenideElement emailInput = $("input[type='text']"),
             passwordInput = $("input[type='password']"),
             loginBut = $("button"),
             errorAut = $("div[class='View-sc-qqgzek-0 hxpMcS']");
