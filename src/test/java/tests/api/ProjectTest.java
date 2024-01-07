@@ -5,14 +5,13 @@ import org.junit.jupiter.api.Test;
 import tests.TestBase;
 import tests.api.api.AuthorizationApi;
 import tests.api.api.UserApi;
-import tests.api.models.AuthorizationResponseModel;
-import tests.api.models.CreateProjectResponseModel;
-import tests.api.models.CreateProjectRequestModel;
 import tests.api.models.AuthorizationRequestModel;
+import tests.api.models.AuthorizationResponseModel;
+import tests.api.models.CreateProjectRequestModel;
+import tests.api.models.CreateProjectResponseModel;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 

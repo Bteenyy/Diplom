@@ -4,14 +4,11 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import tests.web.pages.AccountPage;
-import tests.web.pages.LoginPage;
-import tests.web.pages.HomePage;
 import tests.TestBase;
+import tests.web.pages.AccountPage;
+import tests.web.pages.HomePage;
+import tests.web.pages.LoginPage;
 import tests.web.pages.ProfilePage;
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 @Tag("web")
 public class DeerayTest extends TestBase {
