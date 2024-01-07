@@ -4,18 +4,23 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class AccountPage {
     SelenideElement checkSuccessfulLogin = $("div[class='View-sc-qqgzek-0 MenuItemStyled-sc-11xrj9h-0 clQVJy']"),
-    logOut = $("svg[width='25'] use");
+            logOut = $("svg[width='25'] use");
 
     public AccountPage checkSuccessfulLogin(String email) {
         checkSuccessfulLogin.shouldHave(text(email));
         return this;
     }
+
     public AccountPage logOut() {
         logOut.click();
+        return this;
+    }
+
+    public AccountPage loginClick() {
+        checkSuccessfulLogin.click();
         return this;
     }
 }

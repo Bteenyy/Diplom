@@ -8,6 +8,7 @@ import tests.web.pages.AccountPage;
 import tests.web.pages.LoginPage;
 import tests.web.pages.HomePage;
 import tests.TestBase;
+import tests.web.pages.ProfilePage;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -17,6 +18,17 @@ public class DeerayTest extends TestBase {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     AccountPage accountPage = new AccountPage();
+    ProfilePage profilePage = new ProfilePage();
+
+    @Test
+    void headerProfileCheck() {
+        homePage.homePageOpen()
+                .enterButtonClick();
+        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
+        accountPage.loginClick();
+        profilePage.headerProfileCheck();
+        accountPage.logOut();
+    }
 
     @Test
     void successfulLoginTest() {
@@ -34,14 +46,4 @@ public class DeerayTest extends TestBase {
         homePage.homePageOpen()
                 .navListCheck(category);
     }
-
-    @Test
-    void unsuccessfulLoginTest() {
-        homePage.homePageOpen()
-                .enterButtonClick();
-        loginPage.loginDataInput("12313", "123123")
-                .errorMessage();
-    }
-
-
 }
