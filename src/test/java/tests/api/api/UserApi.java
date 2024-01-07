@@ -1,12 +1,12 @@
-package web.tests.api.api;
+package tests.api.api;
 
-import web.tests.api.models.CreateProjectRequestModel;
-import web.tests.api.models.CreateProjectResponseModel;
+import tests.api.models.CreateProjectRequestModel;
+import tests.api.models.CreateProjectResponseModel;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static web.tests.api.specs.Spec.loginTestRequestSpec;
-import static web.tests.api.specs.Spec.loginTestResponseSpec;
+import static tests.api.specs.Spec.loginTestRequestSpec;
+import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class UserApi {
     public void createProjectWithoutSpace(CreateProjectRequestModel createProjectRequestModel, String token) {

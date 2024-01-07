@@ -1,16 +1,18 @@
-package web.tests.web;
+package tests.web;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import web.tests.web.pages.AccountPage;
-import web.tests.web.pages.LoginPage;
-import web.tests.web.pages.HomePage;
-import web.tests.TestBase;
+import tests.web.pages.AccountPage;
+import tests.web.pages.LoginPage;
+import tests.web.pages.HomePage;
+import tests.TestBase;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+@Tag("web")
 public class DeerayTest extends TestBase {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();

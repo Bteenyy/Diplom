@@ -1,20 +1,20 @@
-package web.tests.api;
+package tests.api;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import web.tests.TestBase;
-import web.tests.api.api.AuthorizationApi;
-import web.tests.api.api.UserApi;
-import web.tests.api.models.AuthorizationResponseModel;
-import web.tests.api.models.CreateProjectResponseModel;
-import web.tests.api.models.CreateProjectRequestModel;
-import web.tests.api.models.AuthorizationRequestModel;
+import tests.TestBase;
+import tests.api.api.AuthorizationApi;
+import tests.api.api.UserApi;
+import tests.api.models.AuthorizationResponseModel;
+import tests.api.models.CreateProjectResponseModel;
+import tests.api.models.CreateProjectRequestModel;
+import tests.api.models.AuthorizationRequestModel;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static web.tests.api.specs.Spec.loginTestRequestSpec;
-import static web.tests.api.specs.Spec.loginTestResponseSpec;
+import static tests.api.specs.Spec.loginTestRequestSpec;
+import static tests.api.specs.Spec.loginTestResponseSpec;
 
 @Tag("api")
 public class ProjectTest extends TestBase {

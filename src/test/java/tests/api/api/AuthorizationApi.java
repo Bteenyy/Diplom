@@ -1,11 +1,11 @@
-package web.tests.api.api;
+package tests.api.api;
 
-import web.tests.api.models.AuthorizationResponseModel;
-import web.tests.api.models.AuthorizationRequestModel;
+import tests.api.models.AuthorizationResponseModel;
+import tests.api.models.AuthorizationRequestModel;
 
 import static io.restassured.RestAssured.given;
-import static web.tests.api.specs.Spec.loginTestRequestSpec;
-import static web.tests.api.specs.Spec.loginTestResponseSpec;
+import static tests.api.specs.Spec.loginTestRequestSpec;
+import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class AuthorizationApi {
     public AuthorizationResponseModel authorization(AuthorizationRequestModel loginBodyModel) {

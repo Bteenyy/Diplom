@@ -33,7 +33,7 @@
 <a href="https://junit.org/junit5/docs/current/user-guide/"><img width="6%" title="JUnit5" src="media/Icons/Junit5.svg" alt="JUnit5"></a>
 <a href="https://github.com/"><img width="6%" title="GitHub" src="media/Icons/GitHub.svg" alt="GitHub"></a>
 <a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/Icons/Jenkins.svg" alt="Jenkins"></a>
-<a href="https://web.telegram.org/"><img width="6%" title="Telegram" src="media/Icons/Telegram.svg" alt="Telegram"></a>
+<a href="https://tests.web.telegram.org/"><img width="6%" title="Telegram" src="media/Icons/Telegram.svg" alt="Telegram"></a>
 <a href="https://www.atlassian.com/ru/software/jira"><img width="5%" title="Jira" src="media/Icons/Jira.svg" alt="Jira"></a>
 </p>
 
