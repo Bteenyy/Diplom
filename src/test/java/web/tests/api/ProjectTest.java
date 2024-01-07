@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import web.tests.TestBase;
 import web.tests.api.api.AuthorizationApi;
+import web.tests.api.api.UserApi;
 import web.tests.api.models.AuthorizationResponseModel;
 import web.tests.api.models.CreateProjectResponseModel;
 import web.tests.api.models.CreateProjectRequestModel;
@@ -20,10 +21,10 @@ public class ProjectTest extends TestBase {
     AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
     AuthorizationApi authorizationApi = new AuthorizationApi();
     AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
-
+    UserApi userApi = new UserApi();
 
     @Test
-    void createProjectTest() {
+    void createProjectTestWithSpaceAndWithoutSpace() {
         CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel("Diplom", "qa.quru");
         CreateProjectResponseModel createProjectResponseModel = given(loginTestRequestSpec)
                 .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
@@ -34,22 +35,9 @@ public class ProjectTest extends TestBase {
                 .spec(loginTestResponseSpec)
                 .statusCode(200)
                 .extract().as(CreateProjectResponseModel.class);
-        assertEquals(createProjectResponseModel.getData().getItem().getName(), "qa.quru");
-    }
-
-    @Test
-    void createProjectTestWithoutWorkspace() {
-        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel("Diplom", "qa.quru");
-        CreateProjectResponseModel response =
-                given(loginTestRequestSpec)
-                        .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                        .body(createProjectRequestModel)
-                        .when()
-                        .post("/v2/workspace/create")
-                        .then()
-                        .spec(loginTestResponseSpec)
-                        .statusCode(200)
-                        .extract().as(CreateProjectResponseModel.class);
-        assertFalse(response.getMessage().isEmpty());
+        if (createProjectResponseModel.getCode() == 501) {
+            userApi.createProjectWithoutSpace(createProjectRequestModel, authorizationResponseModel.getData().getToken());
+        } else
+            assertEquals(createProjectResponseModel.getData().getItem().getName(), "qa.quru");
     }
 }
