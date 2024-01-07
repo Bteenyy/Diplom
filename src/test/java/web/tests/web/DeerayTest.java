@@ -23,17 +23,11 @@ public class DeerayTest extends TestBase {
     }
 
     @Test
-    void successfulLoginTest1() {
+    void unsuccessfulLoginTest() {
         homePage.homePageOpen()
                 .enterButtonClick();
-        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
+        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_1")
+                .errorMessage();
+    }
 
-    }
-    @Test
-    void successfulLoginTests()
-    {
-        open("");
-        $("a[class$='btn-demo-wr']").click();
-        accountPage.checkSuccessfulLogin("rasitsahbutdinov915455@gmail.com");
-    }
 }

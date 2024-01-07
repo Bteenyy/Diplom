@@ -4,7 +4,7 @@ import web.tests.api.models.CreateProjectRequestModel;
 import web.tests.api.models.CreateProjectResponseModel;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static web.tests.api.specs.Spec.loginTestRequestSpec;
 import static web.tests.api.specs.Spec.loginTestResponseSpec;
 
@@ -19,6 +19,6 @@ public class UserApi {
                 .spec(loginTestResponseSpec)
                 .statusCode(200)
                 .extract().as(CreateProjectResponseModel.class);
-        assertFalse(createProjectResponseModel.getMessage().isEmpty());
+        assertEquals(createProjectResponseModel.getMessage(), "Достигнут лимит на количество проектов");
     }
 }

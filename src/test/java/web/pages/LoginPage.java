@@ -11,7 +11,7 @@ public class LoginPage {
     SelenideElement emailInput = $("input[placeholder='Email']"),
             passwordInput = $("input[type='password']"),
             loginBut = $("button"),
-            errorAut = $("span[class='Text-sc-kheewc-0 euRvdN']");
+            errorAut = $("div[class='View-sc-qqgzek-0 hxpMcS']");
 
     public LoginPage loginDataInput(String email, String password) {
         emailInput.setValue(email);
