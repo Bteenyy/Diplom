@@ -6,7 +6,10 @@ import web.pages.LoginPage;
 import web.pages.HomePage;
 import web.tests.TestBase;
 
-public class LoginTest extends TestBase {
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+
+public class DeerayTest extends TestBase {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     AccountPage accountPage = new AccountPage();
@@ -18,11 +21,19 @@ public class LoginTest extends TestBase {
         loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
         accountPage.checkSuccessfulLogin("rasitsahbutdinov915455@gmail.com");
     }
+
     @Test
-    void unsuccessfulLoginTest() {
+    void successfulLoginTest1() {
         homePage.homePageOpen()
                 .enterButtonClick();
-        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "12314")
-                .errorMessage();
+        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
+
+    }
+    @Test
+    void successfulLoginTests()
+    {
+        open("");
+        $("a[class$='btn-demo-wr']").click();
+        accountPage.checkSuccessfulLogin("rasitsahbutdinov915455@gmail.com");
     }
 }

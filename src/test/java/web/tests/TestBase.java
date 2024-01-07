@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
     @BeforeAll
-    static void beforeAff() {
+    static void beforeAll() {
         RestAssured.baseURI = "https://api.deeray.com";
         Configuration.baseUrl = "https://deeray.com/";
         Configuration.pageLoadStrategy = "eager";
