@@ -18,6 +18,15 @@ public class DeerayTest extends TestBase {
     ProfilePage profilePage = new ProfilePage();
 
     @Test
+    void successfulLoginTest() {
+        homePage.homePageOpen()
+                .enterButtonClick();
+        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
+        accountPage.checkSuccessfulLogin("rasitsahbutdinov915455@gmail.com")
+                .logOut();
+    }
+
+    @Test
     void headerProfileCheck() {
         homePage.homePageOpen()
                 .enterButtonClick();
@@ -25,15 +34,6 @@ public class DeerayTest extends TestBase {
         accountPage.loginClick();
         profilePage.headerProfileCheck();
         accountPage.logOut();
-    }
-
-    @Test
-    void successfulLoginTest() {
-        homePage.homePageOpen()
-                .enterButtonClick();
-        loginPage.loginDataInput("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
-        accountPage.checkSuccessfulLogin("rasitsahbutdinov915455@gmail.com")
-                .logOut();
     }
 
 
