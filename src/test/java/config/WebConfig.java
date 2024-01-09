@@ -3,13 +3,13 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${envWeb}.properties",
+        "classpath:${launch}.properties",
 })
 
 public interface WebConfig extends Config {
 
     @Key("browser")
-    @DefaultValue("CHROME")
+    @DefaultValue("chrome")
     String browser();
 
 

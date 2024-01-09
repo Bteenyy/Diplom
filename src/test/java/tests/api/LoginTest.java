@@ -21,7 +21,6 @@ public class LoginTest extends TestBase {
 
     @Test
     @Story("Testing of successful login using method POST")
-    @Tag("positive")
     void successfulLoginTest() {
         AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel("rasitsahbutdinov915455@gmail.com", "mdf9MsZs2bbM7kq_");
         AuthorizationResponseModel responseModel =
