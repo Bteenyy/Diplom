@@ -27,8 +27,8 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browserVersion = System.getProperty("browserVersion", config.version());
         Configuration.pageLoadStrategy = "eager";
-        if (config.getRemoteUrl() != null || System.getProperty("selenoidAddress") != null) {
-            Configuration.remote = System.getProperty("selenoidAddress", config.getRemoteUrl());
+        if (config.getRemoteUrl() != null || System.getProperty("remoteUrl") != null) {
+            Configuration.remote = System.getProperty("remoteUrl", config.getRemoteUrl());
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
@@ -48,7 +48,7 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        if (config.getRemoteUrl() != null || System.getProperty("selenoidAddress") != null) {
+        if (config.getRemoteUrl() != null || System.getProperty("remoteUrl") != null) {
             Attach.addVideo();
         }
         closeWebDriver();
