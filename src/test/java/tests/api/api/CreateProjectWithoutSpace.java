@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
-public class UserApi {
+public class CreateProjectWithoutSpace {
     public void createProjectWithoutSpace(CreateProjectRequestModel createProjectRequestModel, String token) {
         CreateProjectResponseModel createProjectResponseModel = given(loginTestRequestSpec)
                 .header("X-Verification-Token", token)
