@@ -3,22 +3,25 @@ package tests.moblie.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
-import static io.appium.java_client.AppiumBy.className;
 import static io.appium.java_client.AppiumBy.id;
 
 public class GooglePage {
-    SelenideElement firstPage = $(id("com.android.chrome:id/terms_accept")),
-            secondPage = $(id("com.android.chrome:id/negative_button")),
-            thirdPage = $(id("com.android.chrome:id/url_bar")),
-            fourthPage = $(id("com.android.chrome:id/line_1")),
-            fivePage = $(id("com.android.chrome:id/search_box_text"));
+    SelenideElement termsAccept = $(id("com.android.chrome:id/terms_accept")),
+            negativeButton = $(id("com.android.chrome:id/negative_button")),
+            searchBoxText = $(id("com.android.chrome:id/search_box_text")),
+            urlBar = $(id("com.android.chrome:id/url_bar")),
+            line = $(id("com.android.chrome:id/line_1")),
+            menuButton = $(id("com.android.chrome:id/menu_button")),
+            checkbox = $(id("com.android.chrome:id/checkbox"));
 
-    public GooglePage openMainPage() {
-        firstPage.click();
-        secondPage.click();
-        fivePage.click();
-        thirdPage.sendKeys("deeray.com");
-        fourthPage.click();
+    public GooglePage mainPageOpen(String url) {
+        termsAccept.click();
+        negativeButton.click();
+        searchBoxText.click();
+        urlBar.sendKeys(url);
+        line.click();
+        menuButton.click();
+        checkbox.click();
         return this;
     }
 }
