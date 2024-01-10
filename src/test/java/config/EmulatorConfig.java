@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${deviceHost}.properties"
+        "classpath:${launch}.properties"
 })
 public interface EmulatorConfig extends Config {
     @Key("local.server")
