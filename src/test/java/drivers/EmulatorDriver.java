@@ -1,5 +1,6 @@
 package drivers;
 
+
 import com.codeborne.selenide.WebDriverProvider;
 import config.EmulatorConfig;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,9 +17,9 @@ import java.net.URL;
 
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
+
 public class EmulatorDriver implements WebDriverProvider {
     static EmulatorConfig configEm = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
-
     @Nonnull
     @Override
     public AndroidDriver createDriver(@Nonnull Capabilities capabilities) {
@@ -28,13 +29,11 @@ public class EmulatorDriver implements WebDriverProvider {
                 .setPlatformName(configEm.platformName())
                 .setPlatformVersion(configEm.platformVersion())
                 .setDeviceName(configEm.deviceName())
-                .setApp(getAppPath())
                 .setAppPackage(configEm.appPackage())
                 .setAppActivity(configEm.appActivity());
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
-
     public static URL getAppiumServerUrl() {
         try {
             return new URL(configEm.localServer());
