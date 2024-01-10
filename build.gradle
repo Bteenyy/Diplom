@@ -16,7 +16,8 @@ def selenideVersion = "6.16.0",
     allureVersion = "2.21.0",
     junitVersion = "5.9.3",
     slf4jVersion = "2.0.9",
-    appiumVersion = "8.3.0"
+    appiumVersion = "8.3.0",
+    javaFakerVersion = "1.0.2"
 
 allure
         {
@@ -41,6 +42,7 @@ dependencies {
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.rest-assured:json-schema-validator:$restAssuredVersion",
             "io.appium:java-client:$appiumVersion",
+            "com.github.javafaker:javafaker:$javaFakerVersion",
             "commons-io:commons-io:2.11.0",
             'org.aeonbits.owner:owner:1.0.4',
             "org.junit.jupiter:junit-jupiter:$junitVersion",

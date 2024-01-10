@@ -14,11 +14,11 @@ public class GooglePage {
             menuButton = $(id("com.android.chrome:id/menu_button")),
             checkbox = $(id("com.android.chrome:id/checkbox"));
 
-    public GooglePage mainPageOpen(String url) {
+    public GooglePage mainPageOpen() {
         termsAccept.click();
         negativeButton.click();
         searchBoxText.click();
-        urlBar.sendKeys(url);
+        urlBar.sendKeys("deeray.com");
         line.click();
         menuButton.click();
         checkbox.click();
