@@ -21,13 +21,14 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
+        RestAssured.baseURI = "https://api.deeray.com";
         Configuration.baseUrl = System.getProperty("baseUrl", config.baseUrl());
         Configuration.browser = System.getProperty("browserName", config.browser());
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browserVersion = System.getProperty("browserVersion", config.version());
         Configuration.pageLoadStrategy = "eager";
-        if (config.getRemoteUrl() != null) {
-            Configuration.remote = config.getRemoteUrl();
+        if (config.getRemoteUrl() != null || System.getProperty("selenoidAddress") != null) {
+            Configuration.remote = System.getProperty("selenoidAddress", config.getRemoteUrl());
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
@@ -42,13 +43,14 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
-   @AfterEach
+    @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        if (config.getRemoteUrl() != null) {
+        if (config.getRemoteUrl() != null || System.getProperty("selenoidAddress") != null) {
             Attach.addVideo();
-       }closeWebDriver();
+        }
+        closeWebDriver();
     }
 }

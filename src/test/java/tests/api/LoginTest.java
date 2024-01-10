@@ -3,6 +3,10 @@ package tests.api;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
+import tests.TestData;
+import tests.api.api.AuthorizationApi;
+import tests.api.api.CreateProjectWithoutSpace;
 import tests.api.models.AuthorizationRequestModel;
 import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.CreateProjectRequestModel;
@@ -16,7 +20,12 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 @Tag("api")
-public class LoginTest extends ApiTestBase {
+public class LoginTest extends TestBase {
+    TestData data = new TestData();
+    AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
+    AuthorizationApi authorizationApi = new AuthorizationApi();
+    AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
+    CreateProjectWithoutSpace userApi = new CreateProjectWithoutSpace();
     @Test
     @DisplayName("Making a successful login request")
     void successfulLoginTest() {
