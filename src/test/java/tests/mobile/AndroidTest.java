@@ -58,6 +58,7 @@ public class AndroidTest extends MobileTestBase {
     }
 
     @Test
+    @Tag("android")
     @DisplayName("Unsuccessful login on enter page")
     public void unsuccessfulLoginTest() {
         step("Open website Deeray.com", () ->
