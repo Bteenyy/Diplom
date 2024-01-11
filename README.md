@@ -47,7 +47,7 @@ ____
 - ✓ *Проверка вкладок в странице 'Careers'*
 
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="media/Icons/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Lesson_17/)</a>
+## <img alt="Jenkins" height="25" src="media/Icons/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Project%20Diplom_22/)</a>
 ____
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/Lesson_17/"><img src="media/Screen/Jenkins.png" alt="Jenkins" width="950"/></a>  
@@ -82,7 +82,7 @@ clean scalablesolutions_test
 "-DselenoidAddress=${selenoidAddress}"
 ```
 <a id="allure"></a>
-## <img src="media/Icons/Allure.svg" title="Allure Report" width="4%"/> Allure [отчет](https://jenkins.autotests.cloud/job/Lesson_17/12/allure/)
+## <img src="media/Icons/Allure.svg" title="Allure Report" width="4%"/> Allure [отчет](https://jenkins.autotests.cloud/job/Project%20Diplom_22/21/allure/)
 ### *Основная страница отчёта*
 
 <p align="center">
