@@ -3,7 +3,7 @@ package tests.mobile;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.TestData;
+import helpers.TestData;
 import tests.mobile.pages.*;
 
 import static io.qameta.allure.Allure.step;

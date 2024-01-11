@@ -3,7 +3,7 @@ package tests.api;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.TestData;
+import helpers.TestData;
 import tests.api.api.AuthorizationApi;
 import tests.api.api.CreateProjectWithoutSpace;
 import tests.api.models.AuthorizationRequestModel;
