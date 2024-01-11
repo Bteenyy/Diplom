@@ -12,6 +12,7 @@ public interface BrowserstackConfig extends Config {
     @Key("browserstack.accessKey")
     String getAccessKey();
 
+
     @Key("browserstack.url")
     String getUrl();
 

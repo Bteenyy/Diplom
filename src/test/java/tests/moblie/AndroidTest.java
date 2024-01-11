@@ -8,7 +8,7 @@ import tests.moblie.pages.*;
 
 import static io.qameta.allure.Allure.step;
 
-@Tag("mobile")
+@Tag("android")
 public class AndroidTest extends MobileTestBase {
     GooglePage googlePage = new GooglePage();
     MainPage mainPage = new MainPage();
@@ -68,4 +68,5 @@ public class AndroidTest extends MobileTestBase {
         step("Make sure unsuccessful login by checking error message", () ->
                 enterPage.errorMessageCheck());
     }
+
 }

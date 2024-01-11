@@ -57,9 +57,8 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
-    useJUnitPlatform()
     systemProperties(System.getProperties())
-
+    useJUnitPlatform()
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
@@ -73,9 +72,9 @@ test {
 }
 
 
-tasks.register('mobile', Test) {
+tasks.register('android', Test) {
     useJUnitPlatform {
-        includeTags("mobile")
+        includeTags("android")
     }
 }
 tasks.register('web', Test) {

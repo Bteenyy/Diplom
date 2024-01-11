@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "classpath:${launch}.properties"
 })
-public interface EmulatorConfig extends Config {
+public interface LocalConfig extends Config {
     @Key("local.server")
     String localServer();
 

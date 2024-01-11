@@ -2,7 +2,7 @@ package drivers;
 
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.EmulatorConfig;
+import config.LocalConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
@@ -14,8 +14,8 @@ import java.net.URL;
 
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 
-public class EmulatorDriver implements WebDriverProvider {
-    static EmulatorConfig configEm = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
+public class LocalDriver implements WebDriverProvider {
+    static LocalConfig configEm = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
     @Nonnull
     @Override
