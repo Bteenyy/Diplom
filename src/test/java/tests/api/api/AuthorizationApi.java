@@ -1,7 +1,7 @@
 package tests.api.api;
 
-import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.AuthorizationRequestModel;
+import tests.api.models.AuthorizationResponseModel;
 
 import static io.restassured.RestAssured.given;
 import static tests.api.specs.Spec.loginTestRequestSpec;

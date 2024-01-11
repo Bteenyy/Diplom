@@ -5,27 +5,17 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import config.WebConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import tests.web.pages.AccountPage;
-import tests.web.pages.HomePage;
-import tests.web.pages.LoginPage;
-import tests.web.pages.ProfilePage;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
-    HomePage homePage = new HomePage();
-    LoginPage loginPage = new LoginPage();
-    AccountPage accountPage = new AccountPage();
-    ProfilePage profilePage = new ProfilePage();
-    TestData data = new TestData();
     static WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
 
     @BeforeAll

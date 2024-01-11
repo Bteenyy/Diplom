@@ -3,7 +3,6 @@ package tests.api;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.TestBase;
 import tests.TestData;
 import tests.api.api.AuthorizationApi;
 import tests.api.api.CreateProjectWithoutSpace;
@@ -26,6 +25,7 @@ public class LoginTest extends ApiTestBase {
     AuthorizationApi authorizationApi = new AuthorizationApi();
     AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
     CreateProjectWithoutSpace userApi = new CreateProjectWithoutSpace();
+
     @Test
     @DisplayName("Making a successful login request")
     void successfulLoginTest() {

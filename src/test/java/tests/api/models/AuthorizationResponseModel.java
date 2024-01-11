@@ -8,6 +8,7 @@ public @Data class AuthorizationResponseModel {
     UserData data;
     int code;
     String message;
+
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class UserData {
