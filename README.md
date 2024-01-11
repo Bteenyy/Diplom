@@ -35,6 +35,10 @@
 <a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/Icons/Jenkins.svg" alt="Jenkins"></a>
 <a href="https://tests.web.telegram.org/"><img width="6%" title="Telegram" src="media/Icons/Telegram.svg" alt="Telegram"></a>
 <a href="https://www.atlassian.com/ru/software/jira"><img width="5%" title="Jira" src="media/Icons/Jira.svg" alt="Jira"></a>
+<a href="https://rest-assured.io/"><img width="5%" title="RestAssured" src="media/Icons/RestAssured.svg" alt="Jira"></a>
+<a href="https://www.browserstack.com/"><img width="5%" title="Browserstack" src="media/Icons/Browserstack.svg" alt="Jira"></a>
+<a href="https://appium.io/"><img width="5%" title="Appium" src="media/Icons/Appium.svg" alt="Jira"></a>
+<a href="https://developer.android.com/studio"><img width="5%" title="Android_Studio" src="media/Icons/Android_Studio.svg" alt="Jira"></a>
 </p>
 
 <a id="cases"></a>
