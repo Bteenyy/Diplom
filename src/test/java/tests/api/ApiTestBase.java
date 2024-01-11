@@ -11,6 +11,8 @@ public class ApiTestBase {
     static void beforeAll() {
         WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
         RestAssured.baseURI = "https://api.deeray.com";
-        Configuration.remote = System.getProperty("remoteUrl", config.getRemoteUrl());
+        if (config.getRemoteUrl() != null || System.getProperty("remoteUrl") != null) {
+            Configuration.remote = System.getProperty("remoteUrl", config.getRemoteUrl());
+        }
     }
 }
