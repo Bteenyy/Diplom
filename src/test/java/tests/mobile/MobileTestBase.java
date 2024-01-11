@@ -30,7 +30,7 @@ public class MobileTestBase {
     @BeforeEach
     void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        open();
+        //  open();
     }
 
     @AfterEach
