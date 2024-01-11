@@ -3,7 +3,6 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.BrowserstackConfig;
-import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -29,7 +28,6 @@ import java.net.URL;
             caps.setCapability("project", "First Java Project");
             caps.setCapability("build", "browserstack-build-1");
             caps.setCapability("name", "first_test");
-
             try {
                 return new RemoteWebDriver(
                         new URL(config.getUrl()), caps);

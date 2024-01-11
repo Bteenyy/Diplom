@@ -4,7 +4,6 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
-import drivers.LocalDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -20,11 +19,7 @@ public class MobileTestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = null;
-        if (deviceHost.equals("browserstack")) {
             Configuration.browser = BrowserstackDriver.class.getName();
-        } else {
-            Configuration.browser = LocalDriver.class.getName();
-        }
     }
     @BeforeEach
     void beforeEach() {
