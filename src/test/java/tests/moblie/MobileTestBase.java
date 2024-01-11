@@ -26,9 +26,9 @@ public class MobileTestBase {
 
     @BeforeAll
     static void beforeAll() {
-        if (System.getProperty("deviceHost").equals("browserstack"))
+        if (System.getProperty("launch").equals("browserstack"))
             Configuration.browser = BrowserstackDriver.class.getName();
-        else if(System.getProperty("deviceHost").equals("emulatorLocal"))
+        else if(System.getProperty("launch").equals("emulatorLocal"))
             Configuration.browser = EmulatorDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
