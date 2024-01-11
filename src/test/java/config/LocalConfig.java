@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${launch}.properties"
+        "classpath:${launchMob}.properties"
 })
 public interface LocalConfig extends Config {
     @Key("local.server")
@@ -17,7 +17,6 @@ public interface LocalConfig extends Config {
 
     @Key("platform.version")
     String platformVersion();
-
 
     @Key("app.package")
     String appPackage();

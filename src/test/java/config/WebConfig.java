@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${launch}.properties",
+        "classpath:${launchWeb}.properties",
 })
 
 public interface WebConfig extends Config{
