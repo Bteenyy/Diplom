@@ -212,5 +212,5 @@ ____
 
 ____
 <p align="center">
-<img title="Selenoid Video" src="media/Screen/Video_report.gif" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="media/Video/Video_report.gif" width="550" height="350"  alt="video">   
 </p>
