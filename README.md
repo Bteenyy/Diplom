@@ -75,19 +75,25 @@
 ### Локальный запуск тестов
 
 #### Запуск всех тестов
+
 ```
 gradle clean test
 ```
+
 или
+
 ```
 gradle clean test -Denv=local
 ```
+
 #### WEB
 
 ```
 gradle clean web
 ```
+
 #### API
+
 ```
 gradle clean api 
 ```
@@ -97,12 +103,23 @@ gradle clean api
 ```
 gradle clean android -launch=emulator
 ```
+
 ### Удаленный запуск тестов
+
+#### WEB
+
 ```
 gradle clean test -Denv=remote
 ```
 
+#### Mobile
+
+```
+gradle clean android -launch=browserstack
+```
+
 Параметры, которыми можно управлять:
+
 ```
 -DbrowserName - наименование браузера. По умолчанию chrome
 -DbrowserVersion - номер версии браузера. По умолчанию 100.0
@@ -120,38 +137,15 @@ ____
 </p>
 
 ### **Параметры сборки в Jenkins:**
+
 ```
 browserName (браузер, по умолчанию chrome)
 browserVersion (версия браузера, по умолчанию 100.0)
 browserSize (размер окна браузера, по умолчанию 1920x1080)
 selenoidAddress (адрес удаленного сервера Selenoid)
 ```
+
 <a id="console"></a>
-
-## Команды для запуска из терминала
-
-___
-***Локальный запуск :***
-
-```bash  
-gradle clean scalablesolutions_test -Dlaunch=local
-```
-
-***Удаленный запуск в Selenoid :***
-
-```bash  
-gradle clean scalablesolutions_test -Dlaunch=remote
-```
-
-***Удалённый запуск через Jenkins :***
-
-```bash  
-clean scalablesolutions_test
-"-DbrowserName=${browserName}"
-"-DbrowserVersion=${browserVersion}"
-"-DbrowserSize=${browserSize}"
-"-DselenoidAddress=${selenoidAddress}"
-```
 
 <a id="allure"></a>
 
