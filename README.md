@@ -104,7 +104,7 @@ clean scalablesolutions_test
 
 
 <a id="allure-testops"></a>
-## <img src="media/Icons/Allure_TO.svg" title="Allure TestOps" width="4%"/> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3812/dashboards)
+## <img src="media/Icons/Allure_TO.svg" title="Allure TestOps" width="4%"/> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3950/dashboards)
 ### *Allure TestOps Dashboard*
 
 <p align="center">  
