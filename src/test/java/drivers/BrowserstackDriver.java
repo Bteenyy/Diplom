@@ -29,12 +29,9 @@ import java.net.URL;
             caps.setCapability("project", "First Java Project");
             caps.setCapability("build", "browserstack-build-1");
             caps.setCapability("name", "first_test");
-            return new RemoteWebDriver(getAppiumServerUrl(), caps);
-        }
-
-        public static URL getAppiumServerUrl() {
             try {
-                return new URL(config.getUrl());
+                return new RemoteWebDriver(
+                        new URL(config.getUrl()), caps);
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }
