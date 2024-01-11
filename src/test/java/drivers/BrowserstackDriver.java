@@ -14,20 +14,22 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
-    static BrowserstackConfig config = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+    protected static final BrowserstackConfig config = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         MutableCapabilities caps = new MutableCapabilities();
+
         caps.setCapability("browserstack.user", config.getUserName());
         caps.setCapability("browserstack.key", config.getAccessKey());
         caps.setCapability("app", config.getApp());
         caps.setCapability("device", config.getDevice());
         caps.setCapability("os_version", config.getOS());
-        caps.setCapability("project", "Diplom");
+        caps.setCapability("project", "First Java Project");
         caps.setCapability("build", "browserstack-build-1");
-        caps.setCapability("name", "Android Test");
+        caps.setCapability("name", "first_test");
+
         try {
             return new RemoteWebDriver(
                     new URL(config.getUrl()), caps);
