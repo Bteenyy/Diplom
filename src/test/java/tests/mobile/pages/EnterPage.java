@@ -1,4 +1,4 @@
-package tests.moblie.pages;
+package tests.mobile.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

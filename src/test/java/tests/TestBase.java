@@ -25,15 +25,15 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browserVersion = System.getProperty("browserVersion", config.version());
         Configuration.pageLoadStrategy = "eager";
-        if (config.getRemoteUrl() != null || System.getProperty("remoteUrl") != null) {
-            Configuration.remote = System.getProperty("remoteUrl", config.getRemoteUrl());
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                    "enableVNC", true,
-                    "enableVideo", true
-            ));
-            Configuration.browserCapabilities = capabilities;
-        }
+       // if (config.getRemoteUrl() != null || System.getProperty("remoteUrl") != null) {
+        //    Configuration.remote = System.getProperty("remoteUrl", config.getRemoteUrl());
+       //     DesiredCapabilities capabilities = new DesiredCapabilities();
+       //     capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+       //             "enableVNC", true,
+       //             "enableVideo", true
+       //     ));
+       //     Configuration.browserCapabilities = capabilities;
+       // }
     }
 
     @BeforeEach

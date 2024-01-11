@@ -7,14 +7,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import tests.TestBase;
 import tests.TestData;
-import tests.web.pages.AccountPage;
-import tests.web.pages.HomePage;
-import tests.web.pages.LoginPage;
-import tests.web.pages.ProfilePage;
+import tests.web.pages.*;
 
 import static io.qameta.allure.Allure.step;
 
-@Tag("web")
 public class DeerayTest extends TestBase {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
@@ -23,6 +19,7 @@ public class DeerayTest extends TestBase {
     TestData data = new TestData();
 
     @Test
+    @Tag("web")
     @DisplayName("Successful login on enter page")
     void successfulLoginTest() {
         step("Open home page", () ->
@@ -38,6 +35,7 @@ public class DeerayTest extends TestBase {
     }
 
     @Test
+    @Tag("web")
     @DisplayName("Successful logout from account page")
     void successfulLogoutTest() {
         step("Open home page", () ->
@@ -55,6 +53,7 @@ public class DeerayTest extends TestBase {
     }
 
     @Test
+    @Tag("web")
     void headerProfileCheck() {
         step("Open home page", () ->
                 homePage.homePageOpen());
@@ -70,7 +69,7 @@ public class DeerayTest extends TestBase {
                 accountPage.logOut());
     }
 
-
+    @Tag("web")
     @ValueSource(strings = {"Продукты", "О компании", "Исследования", "Вакансии", "Контакты"})
     @ParameterizedTest(name = "В навигационном панели присутствует элемент {0} для запроса {0}")
     void homeNavTest(String category) {

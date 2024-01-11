@@ -1,14 +1,14 @@
-package tests.moblie;
+package tests.mobile;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestData;
-import tests.moblie.pages.*;
+import tests.mobile.pages.*;
 
 import static io.qameta.allure.Allure.step;
 
-@Tag("android")
+
 public class AndroidTest extends MobileTestBase {
     GooglePage googlePage = new GooglePage();
     MainPage mainPage = new MainPage();
@@ -18,6 +18,7 @@ public class AndroidTest extends MobileTestBase {
     TestData data = new TestData();
 
     @Test
+    @Tag("android")
     @DisplayName("Successful open website Deeray.com")
     public void MainPageTest() {
         step("Open website Deeray.com", () ->
@@ -27,6 +28,7 @@ public class AndroidTest extends MobileTestBase {
     }
 
     @Test
+    @Tag("android")
     @DisplayName("Successful open company page")
     public void CompanyPageTest() {
         step("Open website Deeray.com", () ->
@@ -40,6 +42,7 @@ public class AndroidTest extends MobileTestBase {
     }
 
     @Test
+    @Tag("android")
     @DisplayName("Successful login on enter page")
     public void successfulLoginTest() {
         step("Open website Deeray.com", () ->
