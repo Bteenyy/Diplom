@@ -19,7 +19,7 @@ public class BrowserstackDriver implements WebDriverProvider {
     @Override
     public org.openqa.selenium.WebDriver createDriver(@Nonnull Capabilities capabilities) {
         MutableCapabilities caps = new MutableCapabilities();
-        caps.setCapability("browserstack.user", config.);
+        caps.setCapability("browserstack.user", config.getUserName());
         caps.setCapability("browserstack.key", config.getAccessKey());
         caps.setCapability("app", config.getApp());
         caps.setCapability("device", config.getDevice());

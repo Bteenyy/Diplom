@@ -1,9 +1,11 @@
 package tests.moblie;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import drivers.BrowserstackDriver;
 import drivers.EmulatorDriver;
-import helpers.Attach;
+import helpers.AttachMobile;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -24,7 +26,10 @@ public class MobileTestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browser = EmulatorDriver.class.getName();
+        if (System.getProperty("deviceHost").equals("browserstack"))
+            Configuration.browser = BrowserstackDriver.class.getName();
+        else if(System.getProperty("deviceHost").equals("emulatorLocal"))
+            Configuration.browser = EmulatorDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
     }
@@ -36,7 +41,12 @@ public class MobileTestBase {
     }
     @AfterEach
     void addAttachments() {
-        Attach.pageSource();
+        AttachMobile.pageSource();
+        if (System.getProperty("deviceHost").equals("browserstack"))
+        {
+            String sessionId = Selenide.sessionId().toString();
+           AttachMobile.addVideo(sessionId);
+        }
         closeWebDriver();
     }
 }
