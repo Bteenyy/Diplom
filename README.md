@@ -1,9 +1,10 @@
 # Проект по автоматизации тестовых сценариев для проекта [Deeray](https://deeray.com/)
-##  Содержание:
+
+## Содержание:
 
 * <a href="#tools">Технологии и инструменты</a>
 
-* <a href="#cases">Примеры автоматизированных тест-кейсов</a>
+* <a href="#cases">Реализованные проверки</a>
 
 * <a href="#jenkins">Сборка в Jenkins</a>
 
@@ -20,6 +21,7 @@
 * <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
 
 <a id="tools"></a>
+
 ## :computer: Использованный стек технологий
 
 <p align="center">
@@ -42,21 +44,37 @@
 </p>
 
 <a id="cases"></a>
-## <a name="Примеры автоматизированных тест-кейсов">**Примеры автоматизированных тест-кейсов:**</a>
-____
-- ✓ *Проверка слайдов на главной странице*
-- ✓ *Проверка работы поиска*
-- ✓ *Проверка вкладок на главной странице*
-- ✓ *Проверка вкладок в странице 'Blog'*
-- ✓ *Проверка вкладок в странице 'Careers'*
+
+## <a name="Реализованные проверки">**Реализованные проверки:**</a>
+
+### Web
+
+- Проверка заголовка страницы профиля
+- Проверка успешной авторизации
+- Проверка выхода с аккаунта после успешной авторизации
+- Проверка навигационной панели домашней страницы
+
+### Api
+
+- Выполнение успешного запроса на авторизацию
+- Выполнение неудачного запроса на вход с неверным паролем
+- Выполнение успешного запроса на выход из профиля
+- Выполнени успешного запроса на создание нового проекта
+
+### Mobile
+- Провека успешного открытия главное страницы
+- Проверка успешной авторизации
+- Проверка неудачной авторизации с неверным паролем
+- Проверка успешного перехода во вкладу "О компании"
 
 <a id="jenkins"></a>
+
 ## <img alt="Jenkins" height="25" src="media/Icons/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Project%20Diplom_22/)</a>
+
 ____
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/Lesson_17/"><img src="media/Screen/Jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
-
 
 ### **Параметры сборки в Jenkins:**
 
@@ -66,18 +84,24 @@ ____
 - *selenoidAddress (адрес удаленного сервера Selenoid)*
 
 <a id="console"></a>
+
 ## Команды для запуска из терминала
+
 ___
 ***Локальный запуск :***
+
 ```bash  
 gradle clean scalablesolutions_test -Dlaunch=local
 ```
+
 ***Удаленный запуск в Selenoid :***
+
 ```bash  
 gradle clean scalablesolutions_test -Dlaunch=remote
 ```
 
 ***Удалённый запуск через Jenkins :***
+
 ```bash  
 clean scalablesolutions_test
 "-DbrowserName=${browserName}"
@@ -85,8 +109,11 @@ clean scalablesolutions_test
 "-DbrowserSize=${browserSize}"
 "-DselenoidAddress=${selenoidAddress}"
 ```
+
 <a id="allure"></a>
+
 ## <img src="media/Icons/Allure.svg" title="Allure Report" width="4%"/> Allure [отчет](https://jenkins.autotests.cloud/job/Project%20Diplom_22/21/allure/)
+
 ### *Основная страница отчёта*
 
 <p align="center">
@@ -108,7 +135,9 @@ clean scalablesolutions_test
 
 
 <a id="allure-testops"></a>
+
 ## <img src="media/Icons/Allure_TO.svg" title="Allure TestOps" width="4%"/> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3950/dashboards)
+
 ### *Allure TestOps Dashboard*
 
 <p align="center">  
@@ -122,14 +151,18 @@ clean scalablesolutions_test
 </p>
 
 <a id="jira"></a>
+
 ## <img alt="Allure" height="25" src="media/Icons/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1040">Jira</a>
+
 ____
 <p align="center">  
 <img title="Jira" src="media/Screen/Jira_report.png" width="850">  
 </p>
 
 <a id="telegram"></a>
+
 ## <img alt="Allure" height="25" src="media/Icons/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
+
 ____
 <p align="center">  
 <img title="Telegram Bot Report" src="media/Screen/Telegram_report.png" width="550">  
@@ -137,7 +170,9 @@ ____
 
 ____
 <a id="video"></a>
+
 ## <img alt="Selenoid" height="25" src="media/Icons/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
+
 ____
 <p align="center">
 <img title="Selenoid Video" src="media/Screen/Video_report.gif" width="550" height="350"  alt="video">   
