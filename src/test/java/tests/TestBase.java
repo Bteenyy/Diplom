@@ -21,7 +21,6 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        RestAssured.baseURI = "https://api.deeray.com";
         Configuration.baseUrl = System.getProperty("baseUrl", config.baseUrl());
         Configuration.browser = System.getProperty("browserName", config.browser());
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");

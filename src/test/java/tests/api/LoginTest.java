@@ -20,7 +20,7 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 @Tag("api")
-public class LoginTest extends TestBase {
+public class LoginTest extends ApiTestBase {
     TestData data = new TestData();
     AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
     AuthorizationApi authorizationApi = new AuthorizationApi();
