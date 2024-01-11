@@ -73,18 +73,17 @@ test {
 }
 
 
-task mobile(type: Test) {
+tasks.register('mobile', Test) {
     useJUnitPlatform {
         includeTags("mobile")
     }
 }
-task web(type: Test) {
+tasks.register('web', Test) {
     useJUnitPlatform {
         includeTags("web")
     }
 }
-
-task api(type: Test) {
+tasks.register('api', Test) {
     useJUnitPlatform {
         includeTags("api")
     }
