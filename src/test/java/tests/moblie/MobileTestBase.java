@@ -42,7 +42,7 @@ public class MobileTestBase {
     @AfterEach
     void addAttachments() {
         AttachMobile.pageSource();
-        if (System.getProperty("deviceHost").equals("browserstack"))
+        if (System.getProperty("launch ").equals("browserstack"))
         {
             String sessionId = Selenide.sessionId().toString();
            AttachMobile.addVideo(sessionId);
