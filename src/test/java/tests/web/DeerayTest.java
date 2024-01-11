@@ -6,7 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import tests.TestData;
-import tests.web.pages.*;
+import tests.web.pages.AccountPage;
+import tests.web.pages.HomePage;
+import tests.web.pages.LoginPage;
+import tests.web.pages.ProfilePage;
 
 import static io.qameta.allure.Allure.step;
 

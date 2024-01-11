@@ -6,7 +6,7 @@ import org.aeonbits.owner.Config;
         "classpath:${launchWeb}.properties",
 })
 
-public interface WebConfig extends Config{
+public interface WebConfig extends Config {
 
     @Key("browserName")
     @DefaultValue("chrome")
@@ -19,6 +19,7 @@ public interface WebConfig extends Config{
     @Key("browserSize")
     @DefaultValue("1920x1080")
     String getBrowserSize();
+
     @Key("remoteUrl")
     String getRemoteUrl();
 }

@@ -1,6 +1,5 @@
 package tests.web.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
@@ -19,6 +18,7 @@ public class LoginPage {
         loginBut.click();
         return this;
     }
+
     public LoginPage accountBannerCheck() {
         headerName.shouldHave(text("Вход"));
         return this;

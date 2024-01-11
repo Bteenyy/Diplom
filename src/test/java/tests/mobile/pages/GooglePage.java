@@ -15,8 +15,8 @@ public class GooglePage {
             checkbox = $(id("com.android.chrome:id/checkbox"));
 
     public GooglePage mainPageOpen() {
-       // termsAccept.click();
-       // negativeButton.click();
+        // termsAccept.click();
+        // negativeButton.click();
         searchBoxText.click();
         urlBar.sendKeys("deeray.com");
         line.click();
