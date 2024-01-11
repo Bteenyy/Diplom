@@ -19,4 +19,8 @@ public class LoginPage {
         loginBut.click();
         return this;
     }
+    public LoginPage accountBannerCheck() {
+        headerName.shouldHave(text("Вход"));
+        return this;
+    }
 }

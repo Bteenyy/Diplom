@@ -11,12 +11,21 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import tests.web.pages.AccountPage;
+import tests.web.pages.HomePage;
+import tests.web.pages.LoginPage;
+import tests.web.pages.ProfilePage;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
+    HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
+    AccountPage accountPage = new AccountPage();
+    ProfilePage profilePage = new ProfilePage();
+    TestData data = new TestData();
     static WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
 
     @BeforeAll
