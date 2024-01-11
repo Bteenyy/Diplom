@@ -5,7 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
 import drivers.LocalDriver;
-import helpers.AttachMobile;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -26,7 +26,6 @@ public class MobileTestBase {
             Configuration.browser = LocalDriver.class.getName();
         }
     }
-
     @BeforeEach
     void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
@@ -35,10 +34,10 @@ public class MobileTestBase {
 
     @AfterEach
     void addAttachments() {
-        AttachMobile.pageSource();
+        Attach.pageSource();
         if (System.getProperty("launch").equals("browserstack")) {
             String sessionId = Selenide.sessionId().toString();
-            AttachMobile.addVideo(sessionId);
+            Attach.addVideo(sessionId);
         }
         closeWebDriver();
     }
