@@ -3,25 +3,22 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${launch}.properties"
+        "classpath:${launch}.properties",
 })
 
-public interface WebConfig extends Config {
+public interface WebConfig extends Config{
 
-    @Key("browser")
+    @Key("browserName")
     @DefaultValue("chrome")
-    String browser();
+    String getBrowserName();
 
-
-    @Key("version")
+    @Key("browserVersion")
     @DefaultValue("100.0")
-    String version();
+    String getBrowserVersion();
 
-    @Key("baseUrl")
-    @DefaultValue("https://deeray.com/")
-    String baseUrl();
-
-
+    @Key("browserSize")
+    @DefaultValue("1920x1080")
+    String getBrowserSize();
     @Key("remoteUrl")
     String getRemoteUrl();
 }
