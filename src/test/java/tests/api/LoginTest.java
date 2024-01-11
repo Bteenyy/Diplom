@@ -18,7 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
-@Tag("api")
 public class LoginTest extends ApiTestBase {
     TestData data = new TestData();
     AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
@@ -27,6 +26,7 @@ public class LoginTest extends ApiTestBase {
     CreateProjectWithoutSpace userApi = new CreateProjectWithoutSpace();
 
     @Test
+    @Tag("api")
     @DisplayName("Making a successful login request")
     void successfulLoginTest() {
         AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
@@ -45,6 +45,8 @@ public class LoginTest extends ApiTestBase {
     }
 
     @Test
+    @Tag("api")
+    @DisplayName("Making a unsuccessful login request")
     void unsuccessfulLoginTest() {
         AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.randomEmail, data.randomPassword);
         AuthorizationResponseModel responseModel =
@@ -62,6 +64,8 @@ public class LoginTest extends ApiTestBase {
     }
 
     @Test
+    @Tag("api")
+    @DisplayName("Making a successful logout request")
     void LogoutTest() {
         AuthorizationResponseModel responseModel =
                 step("Execute a post-request for logout and record the response", () ->
@@ -79,6 +83,8 @@ public class LoginTest extends ApiTestBase {
     }
 
     @Test
+    @Tag("api")
+    @DisplayName("Making a successful create project request")
     void createProjectTestWithSpaceAndWithoutSpace() {
         CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel("Diplom", "qa.quru");
         CreateProjectResponseModel createProjectResponseModel =
