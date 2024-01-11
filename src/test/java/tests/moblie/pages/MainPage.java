@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
 import static org.openqa.selenium.By.className;
 
 public class MainPage {
-    SelenideElement banner = $x("//android.view.View[@content-desc=\"index\"]"),
+    SelenideElement banner = $x("//android.webkit.WebView[@text=\"Deeray\"]/android.view.View/android.view.View[1]/android.view.View"),
             companyBut = $x("//android.widget.TextView[@text=\"О компании\"]"),
             enterBut = $x("//android.widget.TextView[@text=\"Вход\"]");
 

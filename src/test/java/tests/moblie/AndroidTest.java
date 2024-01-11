@@ -3,10 +3,19 @@ package tests.moblie;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.TestData;
+import tests.moblie.pages.*;
 
 import static io.qameta.allure.Allure.step;
+
 @Tag("mobile")
 public class AndroidTest extends MobileTestBase {
+    GooglePage googlePage = new GooglePage();
+    MainPage mainPage = new MainPage();
+    CompanyPage companyPage = new CompanyPage();
+    EnterPage enterPage = new EnterPage();
+    AccountPage accountPage = new AccountPage();
+    TestData data = new TestData();
 
     @Test
     @DisplayName("Successful open website Deeray.com")
