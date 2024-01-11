@@ -121,10 +121,10 @@ ____
 
 ### **Параметры сборки в Jenkins:**
 ```
-browserName (браузер, по умолчанию chrome)*
-browserVersion (версия браузера, по умолчанию 100.0)*
-browserSize (размер окна браузера, по умолчанию 1920x1080)*
-selenoidAddress (адрес удаленного сервера Selenoid)*
+browserName (браузер, по умолчанию chrome)
+browserVersion (версия браузера, по умолчанию 100.0)
+browserSize (размер окна браузера, по умолчанию 1920x1080)
+selenoidAddress (адрес удаленного сервера Selenoid)
 ```
 <a id="console"></a>
 
