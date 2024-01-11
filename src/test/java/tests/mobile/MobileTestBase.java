@@ -29,17 +29,17 @@ public class MobileTestBase {
 
     @BeforeEach
     void beforeEach() {
-     //   SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        //  open();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        open();
     }
 
     @AfterEach
     void addAttachments() {
-    //    AttachMobile.pageSource();
-    //    if (System.getProperty("launch").equals("browserstack")) {
-     //       String sessionId = Selenide.sessionId().toString();
-     //       AttachMobile.addVideo(sessionId);
-     //   }
-    //    closeWebDriver();
+        AttachMobile.pageSource();
+        if (System.getProperty("launch").equals("browserstack")) {
+            String sessionId = Selenide.sessionId().toString();
+            AttachMobile.addVideo(sessionId);
+        }
+        closeWebDriver();
     }
 }
