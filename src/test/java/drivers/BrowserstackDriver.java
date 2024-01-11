@@ -6,6 +6,7 @@ import config.BrowserstackConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.annotation.Nonnull;
@@ -17,7 +18,7 @@ public class BrowserstackDriver implements WebDriverProvider {
 
     @Nonnull
     @Override
-    public org.openqa.selenium.WebDriver createDriver(@Nonnull Capabilities capabilities) {
+    public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         MutableCapabilities caps = new MutableCapabilities();
         caps.setCapability("browserstack.user", config.getUserName());
         caps.setCapability("browserstack.key", config.getAccessKey());
