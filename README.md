@@ -112,12 +112,6 @@ gradle clean android -launch=emulator
 gradle clean test -Denv=remote
 ```
 
-#### Mobile
-
-```
-gradle clean android -launch=browserstack
-```
-
 Параметры, которыми можно управлять:
 
 ```
@@ -125,6 +119,12 @@ gradle clean android -launch=browserstack
 -DbrowserVersion - номер версии браузера. По умолчанию 100.0
 -DbrowserSize - размер окна браузера. По умолчанию 1980x1080
 -DremoteUrl - адрес удаленного сервера, на котором будут запускаться тесты
+```
+
+#### Mobile
+
+```
+gradle clean android -launch=browserstack
 ```
 
 <a id="jenkins"></a>
