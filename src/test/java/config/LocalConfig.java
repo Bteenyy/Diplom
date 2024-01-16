@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${launchMob}.properties"
+        "classpath:${launch}.properties"
 })
 public interface LocalConfig extends Config {
     @Key("local.server")

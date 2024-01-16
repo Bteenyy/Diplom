@@ -17,9 +17,9 @@ import static com.codeborne.selenide.Selenide.open;
 public class MobileTestBase {
     @BeforeAll
     static void beforeAll() {
-        if (System.getProperty("launchMob").equals("browserstack"))
+        if (System.getProperty("launch").equals("browserstack"))
             Configuration.browser = BrowserstackDriver.class.getName();
-        else if (System.getProperty("launchMob").equals("emulator"))
+        else if (System.getProperty("launch").equals("emulator"))
             Configuration.browser = LocalDeviceDriver.class.getName();
         Configuration.browserSize = null;
     }

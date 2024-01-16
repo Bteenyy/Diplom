@@ -22,10 +22,11 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://deeray.com/";
+        RestAssured.baseURI = "https://api.deeray.com";
         Configuration.browser = config.getBrowserName();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.browserSize = config.getBrowserSize();
-       // Configuration.remote = config.getRemoteUrl();
+        Configuration.remote = config.getRemoteUrl();
         Configuration.pageLoadStrategy = "eager";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
