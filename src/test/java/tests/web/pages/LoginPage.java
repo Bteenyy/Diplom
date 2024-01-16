@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
-   final SelenideElement headerName = $("span[class='Text-sc-kheewc-0 dzoeaH']"),
+    final SelenideElement headerName = $("span[class='Text-sc-kheewc-0 dzoeaH']"),
             emailInput = $("input[placeholder='Email']"),
             passwordInput = $("input[type='password']"),
             loginBut = $("button");

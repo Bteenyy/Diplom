@@ -1,9 +1,9 @@
 package tests.mobile;
 
+import helpers.TestData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import helpers.TestData;
 import tests.mobile.pages.*;
 
 import static io.qameta.allure.Allure.step;
@@ -11,12 +11,12 @@ import static io.qameta.allure.Allure.step;
 
 @SuppressWarnings("ALL")
 public class AndroidTest extends MobileTestBase {
-   final GooglePage googlePage = new GooglePage();
-   final MainPage mainPage = new MainPage();
-   final CompanyPage companyPage = new CompanyPage();
-   final EnterPage enterPage = new EnterPage();
-   final AccountPage accountPage = new AccountPage();
-   final TestData data = new TestData();
+    final GooglePage googlePage = new GooglePage();
+    final MainPage mainPage = new MainPage();
+    final CompanyPage companyPage = new CompanyPage();
+    final EnterPage enterPage = new EnterPage();
+    final AccountPage accountPage = new AccountPage();
+    final TestData data = new TestData();
 
     @SuppressWarnings("Convert2MethodRef")
     @Test

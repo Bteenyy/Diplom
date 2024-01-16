@@ -39,8 +39,9 @@ public class AccountPage {
         lnBut.$(byText(language)).click();
         return this;
     }
+
     public AccountPage changeLanguageCheck(String text) {
-       logHeader.shouldHave(text(text));
+        logHeader.shouldHave(text(text));
         return this;
     }
 }
