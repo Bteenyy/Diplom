@@ -112,6 +112,5 @@ public class DeerayApiTest extends ApiTestBase {
                         .spec(loginTestResponseSpec)
                         .statusCode(200)
                         .extract().response());
-
     }
 }
