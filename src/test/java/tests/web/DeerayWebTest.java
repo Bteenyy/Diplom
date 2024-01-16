@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import tests.api.api.CreateProject;
 import tests.web.pages.*;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
 
@@ -22,7 +23,7 @@ public class DeerayWebTest extends TestBase {
     final ProjectPage projectPage = new ProjectPage();
 
     @Test
-    @Tag("web")
+    // @Tag("web")
     @DisplayName("Successful login on enter page")
     void successfulLoginTest() {
         step("Open home page", () ->
@@ -38,7 +39,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    @Tag("web")
+    // @Tag("web")
     @DisplayName("Successful logout from account page")
     void successfulLogoutTest() {
         step("Open home page", () ->
@@ -56,7 +57,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    @Tag("web")
+    //  @Tag("web")
     @DisplayName("Successful check profile header")
     void headerProfileCheck() {
         step("Open home page", () ->
@@ -73,7 +74,7 @@ public class DeerayWebTest extends TestBase {
                 accountPage.logOut());
     }
 
-    @Tag("web")
+    //  @Tag("web")
     @ValueSource(strings = {"Продукты", "О компании", "Исследования", "Вакансии", "Контакты"})
     @ParameterizedTest(name = "В навигационном панели присутствует элемент {0} для запроса {0}")
     void homeNavTest(String category) {
@@ -85,6 +86,19 @@ public class DeerayWebTest extends TestBase {
 
     @Test
     @Tag("web")
+    @DisplayName("Successful login on enter page")
+    void changeLanguageTest() {
+        step("Open home page", () ->
+                homePage.homePageOpen());
+        step("Click enter button", () ->
+                homePage.enterButtonClick());
+        step("Input account data", () ->
+                loginPage.loginDataInput(data.email, data.password));
+        accountPage.changeLanguage();
+    }
+
+    @Test
+    // @Tag("web")
     @DisplayName("Successful create project")
     void successfulCreateProjectTest() {
         step("Open home page", () ->
@@ -103,7 +117,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    @Tag("web")
+    //  @Tag("web")
     @DisplayName("Successful delete project")
     void successfulDeleteProjectTest() {
         step("Open home page", () ->
