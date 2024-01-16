@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
-public class CreateProject {
+public class CreateProjectApi {
     TestData data = new TestData();
     final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
     final AuthorizationApi authorizationApi = new AuthorizationApi();

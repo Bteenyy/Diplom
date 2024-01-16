@@ -12,7 +12,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import tests.api.api.CreateProject;
+import tests.api.api.CreateProjectApi;
 import tests.web.pages.*;
 
 import java.util.Map;
@@ -25,7 +25,7 @@ public class TestBase {
     final AccountPage accountPage = new AccountPage();
     final ProfilePage profilePage = new ProfilePage();
     final TestData data = new TestData();
-    final CreateProject createProject = new CreateProject();
+    final CreateProjectApi createProject = new CreateProjectApi();
     final ProjectPage projectPage = new ProjectPage();
     static final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
 

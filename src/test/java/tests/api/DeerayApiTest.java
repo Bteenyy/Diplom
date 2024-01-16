@@ -1,11 +1,8 @@
 package tests.api;
 
-import helpers.TestData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.api.api.AuthorizationApi;
-import tests.api.api.CreateProject;
 import tests.api.models.AuthorizationRequestModel;
 import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.CreateProjectRequestModel;
@@ -19,12 +16,6 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeerayApiTest extends ApiTestBase {
-    final TestData data = new TestData();
-    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
-    final AuthorizationApi authorizationApi = new AuthorizationApi();
-    final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
-    final CreateProject userApi = new CreateProject();
-
     @Test
     @Tag("api")
     @DisplayName("Making a successful login request")

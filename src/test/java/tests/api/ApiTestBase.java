@@ -2,11 +2,22 @@ package tests.api;
 
 import com.codeborne.selenide.Configuration;
 import config.WebConfig;
+import helpers.TestData;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
+import tests.api.api.AuthorizationApi;
+import tests.api.api.CreateProjectApi;
+import tests.api.models.AuthorizationRequestModel;
+import tests.api.models.AuthorizationResponseModel;
 
 public class ApiTestBase {
+    final TestData data = new TestData();
+    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
+    final AuthorizationApi authorizationApi = new AuthorizationApi();
+    final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
+    final CreateProjectApi userApi = new CreateProjectApi();
+
     @BeforeAll
     static void beforeAll() {
         WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
