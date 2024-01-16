@@ -1,4 +1,4 @@
-# Проект по автоматизации тестовых сценариев для проекта [Deeray](https://deeray.com/)
+# Проект по автоматизации тестовых сценариев для проекта <a href="https://https://deeray.com/"><img width="%" title="Deeray.com" src="media/Screen/logo.png" alt="Intelij_IDEA"></a>
 
 ## Содержание:
 
