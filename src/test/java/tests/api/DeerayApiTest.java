@@ -16,6 +16,7 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeerayApiTest extends ApiTestBase {
+
     @Test
     @Tag("api")
     @DisplayName("Making a successful login request")
@@ -95,6 +96,23 @@ public class DeerayApiTest extends ApiTestBase {
         } else
             step("Check the success create project", () ->
                     assertEquals(createProjectResponseModel.getData().getItem().getName(), "qa.quru"));
+    }
+
+    @Test
+    //   @Tag("api")
+    @DisplayName("Making a successful delete project")
+    void deleteProject() {
+        step("Execute a delete-request for delete project", () ->
+                given(loginTestRequestSpec)
+                        .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
+                        .body(worcspaceResponseModel.getData().getItems().get(0))
+                        .when()
+                        .delete("/v2/workspace")
+                        .then()
+                        .spec(loginTestResponseSpec)
+                        .statusCode(200)
+                        .extract().response());
+
     }
 
 }
