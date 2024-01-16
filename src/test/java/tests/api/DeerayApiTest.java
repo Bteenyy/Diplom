@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import helpers.TestData;
 import tests.api.api.AuthorizationApi;
-import tests.api.api.CreateProjectWithoutSpace;
+import tests.api.api.CreateProject;
 import tests.api.models.AuthorizationRequestModel;
 import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.CreateProjectRequestModel;
@@ -23,7 +23,7 @@ public class DeerayApiTest extends ApiTestBase {
     final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
-    final CreateProjectWithoutSpace userApi = new CreateProjectWithoutSpace();
+    final CreateProject userApi = new CreateProject();
 
     @Test
     @Tag("api")

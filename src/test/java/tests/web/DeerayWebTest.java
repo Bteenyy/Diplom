@@ -1,14 +1,13 @@
 package tests.web;
 
 import com.codeborne.selenide.Condition;
-import io.restassured.internal.common.assertion.Assertion;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import helpers.TestData;
-import tests.api.DeerayApiTest;
+import tests.api.api.CreateProject;
 import tests.web.pages.*;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -22,7 +21,7 @@ public class DeerayWebTest extends TestBase {
     final AccountPage accountPage = new AccountPage();
     final ProfilePage profilePage = new ProfilePage();
     final TestData data = new TestData();
-    final DeerayApiTest deerayApiTest = new DeerayApiTest();
+    CreateProject createProject = new CreateProject();
     final ProjectPage projectPage = new ProjectPage();
 
     @Test
@@ -89,15 +88,19 @@ public class DeerayWebTest extends TestBase {
 
     @Test
     @Tag("web")
-    @DisplayName("Successful create project")
-    void projectCreate() {
+    @DisplayName("Successful delete project")
+    void successfulCreateProjectTest() {
         step("Open home page", () ->
                 homePage.homePageOpen());
         step("Click enter button", () ->
                 homePage.enterButtonClick());
         step("Input account data", () ->
                 loginPage.loginDataInput(data.email, data.password));
-        accountPage.projectButtonClick();
-        projectPage.counterProjectCheck();
+        step("Click project button", () ->
+                accountPage.projectButtonClick());
+        step("Create project with api", () ->
+                createProject.createProject());
+        step("Make sure successful create project by checking the name project", () ->
+                projectPage.nameProjectCheck(data.name));
     }
 }
