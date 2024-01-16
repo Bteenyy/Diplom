@@ -99,7 +99,7 @@ public class DeerayApiTest extends ApiTestBase {
     }
 
     @Test
-    //   @Tag("api")
+    @Tag("api")
     @DisplayName("Making a successful delete project")
     void deleteProject() {
         step("Execute a delete-request for delete project", () ->
