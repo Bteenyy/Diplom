@@ -1,4 +1,4 @@
-# Проект по автоматизации тестовых сценариев<a href="https://https://deeray.com/"><img width="%" title="Deeray.com" src="media/Screen/logo.png" alt="Deeray.com"></a>
+# Проект по автоматизации тестовых сценариев<a href="https://deeray.com/"><img width="%" title="Deeray.com" src="media/Screen/logo.png" alt="Deeray.com"></a>
 
 ## Содержание:
 
