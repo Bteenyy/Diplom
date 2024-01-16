@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.WebConfig;
 import helpers.Attach;
+import helpers.TestData;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
@@ -11,12 +12,21 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import tests.api.api.CreateProject;
+import tests.web.pages.*;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
+    final HomePage homePage = new HomePage();
+    final LoginPage loginPage = new LoginPage();
+    final AccountPage accountPage = new AccountPage();
+    final ProfilePage profilePage = new ProfilePage();
+    final TestData data = new TestData();
+    final CreateProject createProject = new CreateProject();
+    final ProjectPage projectPage = new ProjectPage();
     static final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
 
     @BeforeAll

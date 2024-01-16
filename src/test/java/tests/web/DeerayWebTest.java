@@ -1,26 +1,16 @@
 package tests.web;
 
-import helpers.TestData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import tests.api.api.CreateProject;
-import tests.web.pages.*;
 
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
 
 public class DeerayWebTest extends TestBase {
-    final HomePage homePage = new HomePage();
-    final LoginPage loginPage = new LoginPage();
-    final AccountPage accountPage = new AccountPage();
-    final ProfilePage profilePage = new ProfilePage();
-    final TestData data = new TestData();
-    final CreateProject createProject = new CreateProject();
-    final ProjectPage projectPage = new ProjectPage();
 
     @Test
     @Tag("web")
