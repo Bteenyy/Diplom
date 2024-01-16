@@ -10,7 +10,7 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeleteProjectApi {
-    TestData data = new TestData();
+    final TestData data = new TestData();
     final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);

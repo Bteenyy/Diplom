@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public @Data class WorcspaceResponseModel {
+public @Data class WorkspaceResponseModel {
     WorkspaceData data;
 
     @JsonIgnoreProperties(ignoreUnknown = true)
