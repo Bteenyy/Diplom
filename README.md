@@ -1,4 +1,5 @@
-# Проект автоматизации тестирования <a href="https://deeray.com/"><img width="100%" title="Deeray.com" src="media/Screen/logo.png" alt="Deeray.com"></a>
+# Проект автоматизации тестирования [Deeray.com](https://deeray.com/)
+<a href="https://deeray.com/"><img width="100%" title="Deeray.com" src="media/Screen/logo.png" alt="Deeray.com"></a>
 
 ## Содержание:
 
