@@ -5,18 +5,19 @@ import lombok.Data;
 
 import java.util.List;
 
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public @Data class WorkspaceResponseModel {
+public class WorkspaceResponseModel {
     WorkspaceData data;
 
+    @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public @Data
-    static class WorkspaceData {
+    public static class WorkspaceData {
         List<ItemData> items;
 
+        @Data
         @JsonIgnoreProperties(ignoreUnknown = true)
-        public @Data
-        static class ItemData {
+        public static class ItemData {
             String id;
         }
     }
