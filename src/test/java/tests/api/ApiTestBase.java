@@ -11,7 +11,7 @@ import tests.api.api.CreateProjectApi;
 import tests.api.api.DeleteProjectApi;
 import tests.api.models.AuthorizationRequestModel;
 import tests.api.models.AuthorizationResponseModel;
-import tests.api.models.WorcspaceResponseModel;
+import tests.api.models.WorkspaceResponseModel;
 
 public class ApiTestBase {
     final TestData data = new TestData();
@@ -20,7 +20,7 @@ public class ApiTestBase {
     final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
     final CreateProjectApi userApi = new CreateProjectApi();
     final DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
-    final WorcspaceResponseModel worcspaceResponseModel = deleteProjectApi.projectId();
+    final WorkspaceResponseModel workspaceResponseModel = deleteProjectApi.projectId();
 
 
     @BeforeAll

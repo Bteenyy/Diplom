@@ -105,7 +105,7 @@ public class DeerayApiTest extends ApiTestBase {
         step("Execute a delete-request for delete project", () ->
                 given(loginTestRequestSpec)
                         .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                        .body(worcspaceResponseModel.getData().getItems().get(0))
+                        .body(workspaceResponseModel.getData().getItems().get(0))
                         .when()
                         .delete("/v2/workspace")
                         .then()
@@ -114,5 +114,4 @@ public class DeerayApiTest extends ApiTestBase {
                         .extract().response());
 
     }
-
 }

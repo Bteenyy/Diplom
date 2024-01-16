@@ -3,7 +3,7 @@ package tests.api.api;
 import helpers.TestData;
 import tests.api.models.AuthorizationRequestModel;
 import tests.api.models.AuthorizationResponseModel;
-import tests.api.models.WorcspaceResponseModel;
+import tests.api.models.WorkspaceResponseModel;
 
 import static io.restassured.RestAssured.given;
 import static tests.api.specs.Spec.loginTestRequestSpec;
@@ -15,7 +15,7 @@ public class DeleteProjectApi {
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
 
-    public WorcspaceResponseModel projectId() {
+    public WorkspaceResponseModel projectId() {
         return given(loginTestRequestSpec)
                 .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
                 .when()
@@ -23,6 +23,6 @@ public class DeleteProjectApi {
                 .then()
                 .spec(loginTestResponseSpec)
                 .statusCode(200)
-                .extract().as(WorcspaceResponseModel.class);
+                .extract().as(WorkspaceResponseModel.class);
     }
 }
