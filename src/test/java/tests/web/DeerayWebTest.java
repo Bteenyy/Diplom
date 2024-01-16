@@ -12,7 +12,6 @@ import tests.web.pages.*;
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
 
-@SuppressWarnings("Convert2MethodRef")
 public class DeerayWebTest extends TestBase {
     final HomePage homePage = new HomePage();
     final LoginPage loginPage = new LoginPage();
@@ -86,7 +85,7 @@ public class DeerayWebTest extends TestBase {
 
     @Test
     @Tag("web")
-    @DisplayName("Successful creater project")
+    @DisplayName("Successful create project")
     void successfulCreateProjectTest() {
         step("Open home page", () ->
                 homePage.homePageOpen());
@@ -120,4 +119,5 @@ public class DeerayWebTest extends TestBase {
         step("Make sure successful delete project by checking the name project must be away", () ->
                 projectPage.deleteProjectCheck(data.name));
     }
+
 }
