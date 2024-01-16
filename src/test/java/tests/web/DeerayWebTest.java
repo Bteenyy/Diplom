@@ -19,7 +19,7 @@ public class DeerayWebTest extends TestBase {
     final AccountPage accountPage = new AccountPage();
     final ProfilePage profilePage = new ProfilePage();
     final TestData data = new TestData();
-    CreateProject createProject = new CreateProject();
+    final CreateProject createProject = new CreateProject();
     final ProjectPage projectPage = new ProjectPage();
 
     @Test
@@ -115,7 +115,9 @@ public class DeerayWebTest extends TestBase {
                 loginPage.loginDataInput(data.email, data.password));
         step("Click project button", () ->
                 accountPage.projectButtonClick());
-        projectPage.projectDelete()
-                .deleteProjectCheck(data.name);
+        step("Click project delete button", () ->
+                projectPage.projectDelete());
+        step("Make sure successful delete project by checking the name project must be away", () ->
+                projectPage.deleteProjectCheck(data.name));
     }
 }
