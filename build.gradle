@@ -17,7 +17,10 @@ def selenideVersion = "6.16.0",
     junitVersion = "5.9.3",
     slf4jVersion = "2.0.9",
     appiumVersion = "8.3.0",
-    javaFakerVersion = "1.0.2"
+    javaFakerVersion = "1.0.2",
+    assertjVersion = "3.24.2",
+    ioVersion = "2.11.0",
+    ownerVersion = "1.0.4"
 
 allure
         {
@@ -43,10 +46,10 @@ dependencies {
             "io.rest-assured:json-schema-validator:$restAssuredVersion",
             "io.appium:java-client:$appiumVersion",
             "com.github.javafaker:javafaker:$javaFakerVersion",
-            "commons-io:commons-io:2.11.0",
-            'org.aeonbits.owner:owner:1.0.4',
+            "commons-io:commons-io:$ioVersion",
+            "org.aeonbits.owner:owner:$ownerVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
-            'org.assertj:assertj-core:3.24.2',
+            "org.assertj:assertj-core:$assertjVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion"
     )
 }
