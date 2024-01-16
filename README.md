@@ -133,7 +133,7 @@ gradle clean android -launch=browserstack
 
 <a id="jenkins"></a>
 
-## <img alt="Jenkins" height="25" src="media/Icons/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Project%20Diplom_22/)</a>
+## <img alt="Jenkins" height="25" src="media/Icons/Jenkins.svg" width="25"/></a><a name="Сборка"></a>[Сборка в Jenkins](https://jenkins.autotests.cloud/job/Project%20Diplom_22/)</a>
 
 ____
 <p align="center">  
@@ -153,7 +153,7 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 
 <a id="allure"></a>
 
-## <img src="media/Icons/Allure.svg" title="Allure Report" width="4%"/> Allure [отчет](https://jenkins.autotests.cloud/job/Project%20Diplom_22/21/allure/)
+## <img src="media/Icons/Allure.svg" title="Allure Report" width="4%"/> [Allure отчет](https://jenkins.autotests.cloud/job/Project%20Diplom_22/21/allure/)
 
 ### *Основная страница отчёта*
 
@@ -177,7 +177,7 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 
 <a id="allure-testops"></a>
 
-## <img src="media/Icons/Allure_TO.svg" title="Allure TestOps" width="4%"/> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3950/dashboards)
+## <img src="media/Icons/Allure_TO.svg" title="Allure TestOps" width="4%"/> [Интеграция с Allure TestOps](https://allure.autotests.cloud/project/3950/dashboards)
 
 ### *Allure TestOps Dashboard*
 
@@ -193,7 +193,7 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 
 <a id="jira"></a>
 
-## <img alt="Allure" height="25" src="media/Icons/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1040">Jira</a>
+## <img alt="Allure" height="25" src="media/Icons/Jira.svg" width="25"/></a> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1040">Интеграция с Jira</a>
 
 ____
 <p align="center">  
