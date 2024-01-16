@@ -15,7 +15,7 @@ import java.net.URL;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 
 public class LocalDeviceDriver implements WebDriverProvider {
-    static LocalConfig configEm = ConfigFactory.create(LocalConfig.class, System.getProperties());
+    static final LocalConfig configEm = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
     @Nonnull
     @Override

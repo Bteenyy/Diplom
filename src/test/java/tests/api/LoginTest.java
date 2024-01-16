@@ -19,11 +19,11 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class LoginTest extends ApiTestBase {
-    TestData data = new TestData();
-    AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
-    AuthorizationApi authorizationApi = new AuthorizationApi();
-    AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
-    CreateProjectWithoutSpace userApi = new CreateProjectWithoutSpace();
+    final TestData data = new TestData();
+    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
+    final AuthorizationApi authorizationApi = new AuthorizationApi();
+    final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
+    final CreateProjectWithoutSpace userApi = new CreateProjectWithoutSpace();
 
     @Test
     @Tag("api")

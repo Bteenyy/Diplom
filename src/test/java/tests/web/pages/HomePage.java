@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class HomePage {
-    SelenideElement enterButton = $("div[class='header-login'] a"),
+   final SelenideElement enterButton = $("div[class='header-login'] a"),
             navigationList = $("nav[class*='t-inline'] ul[class*='nav-menu']");
 
     public HomePage homePageOpen() {

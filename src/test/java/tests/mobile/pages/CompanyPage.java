@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class CompanyPage {
-    SelenideElement companyBanner = $x("//android.view.View[@text=\"КОМПАНИЯ\"]");
+    final SelenideElement companyBanner = $x("//android.view.View[@text=\"КОМПАНИЯ\"]");
 
     public CompanyPage companyBannerCheck() {
         companyBanner.shouldBe(visible);

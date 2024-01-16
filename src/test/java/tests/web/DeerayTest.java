@@ -13,12 +13,13 @@ import tests.web.pages.ProfilePage;
 
 import static io.qameta.allure.Allure.step;
 
+@SuppressWarnings("Convert2MethodRef")
 public class DeerayTest extends TestBase {
-    HomePage homePage = new HomePage();
-    LoginPage loginPage = new LoginPage();
-    AccountPage accountPage = new AccountPage();
-    ProfilePage profilePage = new ProfilePage();
-    TestData data = new TestData();
+    final HomePage homePage = new HomePage();
+    final LoginPage loginPage = new LoginPage();
+    final AccountPage accountPage = new AccountPage();
+    final ProfilePage profilePage = new ProfilePage();
+    final TestData data = new TestData();
 
     @Test
     @Tag("web")
@@ -56,6 +57,7 @@ public class DeerayTest extends TestBase {
 
     @Test
     @Tag("web")
+    @DisplayName("Successful check profile header")
     void headerProfileCheck() {
         step("Open home page", () ->
                 homePage.homePageOpen());
@@ -79,5 +81,22 @@ public class DeerayTest extends TestBase {
                 homePage.homePageOpen());
         step("The navigation bar contains an element {0} for the request {0}", () ->
                 homePage.navListCheck(category));
+    }
+    @Test
+    @Tag("web")
+    @DisplayName("Successful check profile header")
+    void projectCreate  () {
+        step("Open home page", () ->
+                homePage.homePageOpen());
+        step("Click enter button", () ->
+                homePage.enterButtonClick());
+        step("Input account data", () ->
+                loginPage.loginDataInput(data.email, data.password));
+        step("Click profile button", () ->
+                accountPage.loginClick());
+        step("Check profile header", () ->
+                profilePage.headerProfileCheck());
+        step("Click logout button", () ->
+                accountPage.logOut());
     }
 }

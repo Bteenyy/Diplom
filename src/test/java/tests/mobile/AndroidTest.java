@@ -9,14 +9,16 @@ import tests.mobile.pages.*;
 import static io.qameta.allure.Allure.step;
 
 
+@SuppressWarnings("ALL")
 public class AndroidTest extends MobileTestBase {
-    GooglePage googlePage = new GooglePage();
-    MainPage mainPage = new MainPage();
-    CompanyPage companyPage = new CompanyPage();
-    EnterPage enterPage = new EnterPage();
-    AccountPage accountPage = new AccountPage();
-    TestData data = new TestData();
+   final GooglePage googlePage = new GooglePage();
+   final MainPage mainPage = new MainPage();
+   final CompanyPage companyPage = new CompanyPage();
+   final EnterPage enterPage = new EnterPage();
+   final AccountPage accountPage = new AccountPage();
+   final TestData data = new TestData();
 
+    @SuppressWarnings("Convert2MethodRef")
     @Test
     @Tag("android")
     @DisplayName("Successful open website Deeray.com")
@@ -27,6 +29,7 @@ public class AndroidTest extends MobileTestBase {
                 mainPage.mainPageCheck());
     }
 
+    @SuppressWarnings("Convert2MethodRef")
     @Test
     @Tag("android")
     @DisplayName("Successful open company page")
@@ -41,6 +44,7 @@ public class AndroidTest extends MobileTestBase {
                 companyPage.companyBannerCheck());
     }
 
+    @SuppressWarnings("Convert2MethodRef")
     @Test
     @Tag("android")
     @DisplayName("Successful login on enter page")
@@ -57,6 +61,7 @@ public class AndroidTest extends MobileTestBase {
                 accountPage.accountHeaderCheck());
     }
 
+    @SuppressWarnings("Convert2MethodRef")
     @Test
     @Tag("android")
     @DisplayName("Unsuccessful login on enter page")

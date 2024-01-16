@@ -11,13 +11,13 @@ import static io.restassured.filter.log.LogDetail.STATUS;
 
 public class Spec {
 
-    public static RequestSpecification loginTestRequestSpec = with()
+    public static final RequestSpecification loginTestRequestSpec = with()
             .filter(withCustomTemplates())
             .log().uri()
             .log().body()
             .contentType("application/json");
 
-    public static ResponseSpecification loginTestResponseSpec = new ResponseSpecBuilder()
+    public static final ResponseSpecification loginTestResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .build();
