@@ -5,11 +5,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import tests.api.api.CreateProject;
 import tests.web.pages.*;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
 
@@ -76,7 +76,7 @@ public class DeerayWebTest extends TestBase {
 
     @Tag("web")
     @ValueSource(strings = {"Продукты", "О компании", "Исследования", "Вакансии", "Контакты"})
-    @ParameterizedTest(name = "В навигационном панели присутствует элемент {0} для запроса {0}")
+    @ParameterizedTest
     void homeNavTest(String category) {
         step("Open home page", () ->
                 homePage.homePageOpen());
@@ -84,17 +84,24 @@ public class DeerayWebTest extends TestBase {
                 homePage.navListCheck(category));
     }
 
-    @Test
+    @CsvSource(value = {
+            "EN, Entry",
+            "RU, Вход",
+            "FR, Inscription",
+            "DE, Login"
+    })
     @Tag("web")
-    @DisplayName("Successful login on enter page")
-    void changeLanguageTest() {
+    @DisplayName("Successful change language")
+    @ParameterizedTest
+    void changeLanguageTest(String language, String checkItem) {
         step("Open home page", () ->
                 homePage.homePageOpen());
         step("Click enter button", () ->
                 homePage.enterButtonClick());
-        step("Input account data", () ->
-                loginPage.loginDataInput(data.email, data.password));
-        accountPage.changeLanguage();
+        step("Choose language", () ->
+                accountPage.changeLanguage(language));
+        step("Checking header after changing language", () ->
+                accountPage.changeLanguageCheck(checkItem));
     }
 
     @Test
