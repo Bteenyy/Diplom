@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
-public class LoginTest extends ApiTestBase {
+public class DeerayApiTest extends ApiTestBase {
     final TestData data = new TestData();
     final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
     final AuthorizationApi authorizationApi = new AuthorizationApi();
@@ -86,7 +86,7 @@ public class LoginTest extends ApiTestBase {
     @Tag("api")
     @DisplayName("Making a successful create project request")
     void createProjectTestWithSpaceAndWithoutSpace() {
-        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel("Diplom", "qa.quru");
+        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(data.descr, data.name);
         CreateProjectResponseModel createProjectResponseModel =
                 step("Execute a post-request for create project and record the response", () ->
                         given(loginTestRequestSpec)

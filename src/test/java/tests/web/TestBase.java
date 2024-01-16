@@ -26,7 +26,7 @@ public class TestBase {
         Configuration.browser = config.getBrowserName();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.browserSize = config.getBrowserSize();
-        Configuration.remote = config.getRemoteUrl();
+       // Configuration.remote = config.getRemoteUrl();
         Configuration.pageLoadStrategy = "eager";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
