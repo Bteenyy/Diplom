@@ -70,7 +70,7 @@
 
 ## Запуск тестов
 
-Все настройки лежат в папке `resources` в файлах `.properties`.
+Все конфигурационные файлы лежат в папке `resources` в файлах `.properties`.
 
 ### Локальный запуск тестов
 
@@ -147,7 +147,7 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 
 <a id="allure"></a>
 
-## <img src="media/Icons/Allure.svg" title="Allure Report" width="4%"/> [Allure отчет](https://jenkins.autotests.cloud/job/Project%20Diplom_22/21/allure/)
+## <img src="media/Icons/Allure.svg" title="Allure Report" width="4%"/> [Allure отчет](https://jenkins.autotests.cloud/job/Project%20Diplom_22/allure/)
 
 ### *Основная страница отчёта*
 
