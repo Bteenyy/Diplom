@@ -1,8 +1,9 @@
-package tests.api;
+package tests.api.tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.api.ApiTestBase;
 import tests.api.models.AuthorizationRequestModel;
 import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.CreateProjectRequestModel;

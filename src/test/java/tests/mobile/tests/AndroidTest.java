@@ -1,9 +1,10 @@
-package tests.mobile;
+package tests.mobile.tests;
 
 import helpers.TestData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.mobile.MobileTestBase;
 import tests.mobile.pages.*;
 
 import static io.qameta.allure.Allure.step;
