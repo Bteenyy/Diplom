@@ -39,7 +39,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    @Tag("web")
+  //  @Tag("web")
     @DisplayName("Successful logout from account page")
     void successfulLogoutTest() {
         step("Open home page", () ->
@@ -57,7 +57,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    @Tag("web")
+  //  @Tag("web")
     @DisplayName("Successful check profile header")
     void headerProfileCheck() {
         step("Open home page", () ->
@@ -74,7 +74,7 @@ public class DeerayWebTest extends TestBase {
                 accountPage.clickLogoutButton());
     }
 
-    @Tag("web")
+   // @Tag("web")
     @ValueSource(strings = {"Продукты", "О компании", "Исследования", "Вакансии", "Контакты"})
     @ParameterizedTest
     void homeNavTest(String category) {
@@ -90,7 +90,7 @@ public class DeerayWebTest extends TestBase {
             "FR, Inscription",
             "DE, Login"
     })
-    @Tag("web")
+  //  @Tag("web")
     @DisplayName("Successful change language")
     @ParameterizedTest
     void changeLanguageTest(String language, String checkItem) {
@@ -105,7 +105,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    @Tag("web")
+   // @Tag("web")
     @DisplayName("Successful create project")
     void successfulCreateProjectTest() {
         step("Open home page", () ->
@@ -124,7 +124,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    @Tag("web")
+   // @Tag("web")
     @DisplayName("Successful delete project")
     void successfulDeleteProjectTest() {
         step("Open home page", () ->

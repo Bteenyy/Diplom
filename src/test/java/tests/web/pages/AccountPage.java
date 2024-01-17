@@ -12,7 +12,7 @@ public class AccountPage {
             projectButton = $("div[class='View-sc-qqgzek-0 MenuItemStyled-sc-11xrj9h-0 dHrPwE']");
 
     public AccountPage checkSuccessfulLogin(String email) {
-        checkSuccessfulLogin.shouldHave(text(email));
+        checkSuccessfulLogin.$(byText(email)).shouldHave(text(email));
         return this;
     }
 
