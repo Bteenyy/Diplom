@@ -14,6 +14,13 @@ import static io.qameta.allure.Allure.step;
 
 public class DeerayWebTest extends TestBase {
 
+    final HomePage homePage = new HomePage();
+    final LoginPage loginPage = new LoginPage();
+    final AccountPage accountPage = new AccountPage();
+    final ProfilePage profilePage = new ProfilePage();
+    final CreateProjectApi createProject = new CreateProjectApi();
+    final ProjectPage projectPage = new ProjectPage();
+
 
     @Test
     @Tag("web")
