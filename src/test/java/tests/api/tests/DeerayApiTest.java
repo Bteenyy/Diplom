@@ -18,7 +18,7 @@ import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeerayApiTest extends ApiTestBase {
     final TestData data = new TestData();
-    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmail(), config.getPassword());
+    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi());
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
     final CreateProjectApi userApi = new CreateProjectApi();
@@ -29,7 +29,7 @@ public class DeerayApiTest extends ApiTestBase {
     @Tag("api")
     @DisplayName("Making a successful login request")
     void successfulLoginTest() {
-        AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmail(), config.getPassword());
+        AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi());
         AuthorizationResponseModel responseModel =
                 step("Execute a post-request with the correct password and login and record the response.", () ->
                         given(loginTestRequestSpec)
@@ -86,7 +86,7 @@ public class DeerayApiTest extends ApiTestBase {
     @Tag("api")
     @DisplayName("Making a successful create project request")
     void createProjectTestWithSpaceAndWithoutSpace() {
-        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(config.getProjectDescription(), config.getProjectName());
+        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(config.getProjectDescriptionApi(), config.getProjectNameApi());
         CreateProjectResponseModel createProjectResponseModel =
                 step("Execute a post-request for create project and record the response", () ->
                         given(loginTestRequestSpec)
