@@ -39,5 +39,13 @@ public interface WebConfig extends Config {
     @DefaultValue("Diplom")
     String getProjectDescription();
 
+    @Key("baseURL")
+    @DefaultValue("Diplom")
+    String getBaseURL();
+
+    @Key("baseURI")
+    @DefaultValue("Diplom")
+    String getBaseURI();
+
 }
 

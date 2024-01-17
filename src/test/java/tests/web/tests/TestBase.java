@@ -31,8 +31,8 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://deeray.com/";
-        RestAssured.baseURI = "https://api.deeray.com";
+        Configuration.baseUrl = config.getBaseURL();
+        RestAssured.baseURI = config.getBaseURI();
         Configuration.browser = config.getBrowserName();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.browserSize = config.getBrowserSize();
