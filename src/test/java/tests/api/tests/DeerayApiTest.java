@@ -1,14 +1,12 @@
 package tests.api.tests;
 
-import helpers.TestData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.api.ApiTestBase;
-import tests.api.api.AuthorizationApi;
-import tests.api.api.CreateProjectApi;
-import tests.api.api.DeleteProjectApi;
-import tests.api.models.*;
+import tests.api.models.AuthorizationRequestModel;
+import tests.api.models.AuthorizationResponseModel;
+import tests.api.models.CreateProjectRequestModel;
+import tests.api.models.CreateProjectResponseModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -18,19 +16,13 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeerayApiTest extends ApiTestBase {
-    final TestData data = new TestData();
-    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
-    final AuthorizationApi authorizationApi = new AuthorizationApi();
-    final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
-    final CreateProjectApi userApi = new CreateProjectApi();
-    final DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
-    final WorkspaceResponseModel workspaceResponseModel = deleteProjectApi.projectId();
+
 
     @Test
     @Tag("api")
     @DisplayName("Making a successful login request")
     void successfulLoginTest() {
-        AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
+        AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmail(), config.getPassword());
         AuthorizationResponseModel responseModel =
                 step("Execute a post-request with the correct password and login and record the response.", () ->
                         given(loginTestRequestSpec)
@@ -87,7 +79,7 @@ public class DeerayApiTest extends ApiTestBase {
     @Tag("api")
     @DisplayName("Making a successful create project request")
     void createProjectTestWithSpaceAndWithoutSpace() {
-        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(data.descr, data.name);
+        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(config.getProjectDescription(), config.getProjectName());
         CreateProjectResponseModel createProjectResponseModel =
                 step("Execute a post-request for create project and record the response", () ->
                         given(loginTestRequestSpec)

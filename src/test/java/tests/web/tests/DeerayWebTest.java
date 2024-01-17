@@ -1,8 +1,5 @@
 package tests.web.tests;
 
-import config.WebConfig;
-import helpers.TestData;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,20 +7,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import tests.api.api.CreateProjectApi;
-import tests.web.TestBase;
 import tests.web.pages.*;
 
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
 
 public class DeerayWebTest extends TestBase {
-    final HomePage homePage = new HomePage();
-    final LoginPage loginPage = new LoginPage();
-    final AccountPage accountPage = new AccountPage();
-    final ProfilePage profilePage = new ProfilePage();
-    final TestData data = new TestData();
-    final CreateProjectApi createProject = new CreateProjectApi();
-    final ProjectPage projectPage = new ProjectPage();
 
 
     @Test
@@ -35,9 +24,9 @@ public class DeerayWebTest extends TestBase {
         step("Click enter button", () ->
                 homePage.enterButtonClick());
         step("Input account data", () ->
-                loginPage.loginDataInput(data.email, data.password));
+                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
         step("Make sure successful login by checking the profile title", () ->
-                accountPage.checkSuccessfulLogin(data.email));
+                accountPage.checkSuccessfulLogin(config.getEmail()));
         step("Click logout button", () ->
                 accountPage.logOut());
     }
@@ -51,9 +40,9 @@ public class DeerayWebTest extends TestBase {
         step("Click enter button", () ->
                 homePage.enterButtonClick());
         step("Input account data", () ->
-                loginPage.loginDataInput(data.email, data.password));
+                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
         step("Make sure successful login by checking the profile title", () ->
-                accountPage.checkSuccessfulLogin(data.email));
+                accountPage.checkSuccessfulLogin(config.getEmail()));
         step("Click logout button", () ->
                 accountPage.logOut());
         step("Make sure successful logout by checking the account banner", () ->
@@ -69,7 +58,7 @@ public class DeerayWebTest extends TestBase {
         step("Click enter button", () ->
                 homePage.enterButtonClick());
         step("Input account data", () ->
-                loginPage.loginDataInput(data.email, data.password));
+                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
         step("Click profile button", () ->
                 accountPage.loginClick());
         step("Check profile header", () ->
@@ -117,14 +106,14 @@ public class DeerayWebTest extends TestBase {
         step("Click enter button", () ->
                 homePage.enterButtonClick());
         step("Input account data", () ->
-                loginPage.loginDataInput(data.email, data.password));
+                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
         step("Click project button", () ->
                 accountPage.projectButtonClick());
         step("Create project with api", () ->
                 createProject.createProject());
         refresh();
         step("Make sure successful create project by checking the name project", () ->
-                projectPage.nameProjectCheck(data.name));
+                projectPage.nameProjectCheck(config.getProjectName()));
     }
 
     @Test
@@ -136,13 +125,13 @@ public class DeerayWebTest extends TestBase {
         step("Click enter button", () ->
                 homePage.enterButtonClick());
         step("Input account data", () ->
-                loginPage.loginDataInput(data.email, data.password));
+                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
         step("Click project button", () ->
                 accountPage.projectButtonClick());
         step("Click project delete button", () ->
                 projectPage.projectDelete());
         step("Make sure successful delete project by checking the name project must be away", () ->
-                projectPage.deleteProjectCheck(data.name));
+                projectPage.deleteProjectCheck(config.getProjectName()));
     }
 
 }

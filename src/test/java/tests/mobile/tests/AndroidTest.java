@@ -1,10 +1,11 @@
 package tests.mobile.tests;
 
+import config.WebConfig;
 import helpers.TestData;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.mobile.MobileTestBase;
 import tests.mobile.pages.*;
 
 import static io.qameta.allure.Allure.step;
@@ -17,6 +18,7 @@ public class AndroidTest extends MobileTestBase {
     final CompanyPage companyPage = new CompanyPage();
     final EnterPage enterPage = new EnterPage();
     final AccountPage accountPage = new AccountPage();
+    static final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
     final TestData data = new TestData();
 
     @SuppressWarnings("Convert2MethodRef")
@@ -57,7 +59,7 @@ public class AndroidTest extends MobileTestBase {
                     .enterButClick();
         });
         step("Input correct email and password for successful login", () ->
-                enterPage.enterDataInput(data.email, data.password));
+                enterPage.enterDataInput(config.getEmail(), config.getPassword()));
         step("Make sure successful login by checking the profile title", () ->
                 accountPage.accountHeaderCheck());
     }

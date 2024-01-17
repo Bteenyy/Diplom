@@ -1,4 +1,4 @@
-package tests.web;
+package tests.web.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -21,6 +21,13 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
     static final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
+
+    final HomePage homePage = new HomePage();
+    final LoginPage loginPage = new LoginPage();
+    final AccountPage accountPage = new AccountPage();
+    final ProfilePage profilePage = new ProfilePage();
+    final CreateProjectApi createProject = new CreateProjectApi();
+    final ProjectPage projectPage = new ProjectPage();
 
     @BeforeAll
     static void beforeAll() {
