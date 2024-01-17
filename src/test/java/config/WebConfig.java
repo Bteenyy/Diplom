@@ -22,4 +22,22 @@ public interface WebConfig extends Config {
 
     @Key("remoteUrl")
     String getRemoteUrl();
+
+    @Key("email")
+    @DefaultValue("rashitsahbutdinov@yandex.ru")
+    String getEmail();
+
+    @Key("password")
+    @DefaultValue("mdf9MsZs2bbM7kq_")
+    String getPassword();
+
+    @Key("projectName")
+    @DefaultValue("qa.quru")
+    String getProjectName();
+
+    @Key("projectDescription")
+    @DefaultValue("Diplom")
+    String getProjectDescription();
+
 }
+
