@@ -117,7 +117,7 @@ public class DeerayWebTest extends TestBase {
         step("Click project button", () ->
                 accountPage.clickProjectButton());
         step("Create project with api", () ->
-                createProject.createProject());
+                createProject.createProject(config.getProjectDescriptionWeb(),config.getProjectNameWeb()));
         refresh();
         step("Make sure successful create project by checking the name project", () ->
                 projectPage.checkNameProject(config.getProjectNameWeb()));

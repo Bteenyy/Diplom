@@ -1,11 +1,5 @@
 package tests.api.api;
 
-import config.ApiConfig;
-import config.WebConfig;
-import helpers.TestData;
-import org.aeonbits.owner.ConfigFactory;
-import tests.api.models.AuthorizationRequestModel;
-import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.WorkspaceResponseModel;
 
 import static io.restassured.RestAssured.given;
@@ -13,14 +7,21 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeleteProjectApi {
-    final ApiConfig config = ConfigFactory.create(ApiConfig.class);
-    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi());
-    final AuthorizationApi authorizationApi = new AuthorizationApi();
-    final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
+    public void deleteProject(String token) {
+        given(loginTestRequestSpec)
+                .header("X-Verification-Token", token)
+                .body(projectId(token).getData().getItems().get(0))
+                .when()
+                .delete("/v2/workspace")
+                .then()
+                .spec(loginTestResponseSpec)
+                .statusCode(200)
+                .extract().response();
+    }
 
-    public WorkspaceResponseModel projectId() {
+    public WorkspaceResponseModel projectId(String token) {
         return given(loginTestRequestSpec)
-                .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
+                .header("X-Verification-Token", token)
                 .when()
                 .get("/v2/workspaces")
                 .then()
@@ -28,4 +29,6 @@ public class DeleteProjectApi {
                 .statusCode(200)
                 .extract().as(WorkspaceResponseModel.class);
     }
+
+
 }
