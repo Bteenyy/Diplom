@@ -18,7 +18,7 @@ public class AndroidTest extends MobileTestBase {
     final CompanyPage companyPage = new CompanyPage();
     final EnterPage enterPage = new EnterPage();
     final AccountPage accountPage = new AccountPage();
-    static final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
+    final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
     final TestData data = new TestData();
 
     @SuppressWarnings("Convert2MethodRef")
