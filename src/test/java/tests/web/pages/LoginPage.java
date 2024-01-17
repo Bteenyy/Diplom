@@ -11,7 +11,7 @@ public class LoginPage {
             passwordInput = $("input[type='password']"),
             loginBut = $("button");
 
-    public LoginPage loginDataInput(String email, String password) {
+    public LoginPage inputLoginData(String email, String password) {
         headerName.shouldHave(text("Вход"));
         emailInput.setValue(email);
         passwordInput.setValue(password);
@@ -19,7 +19,7 @@ public class LoginPage {
         return this;
     }
 
-    public LoginPage accountBannerCheck() {
+    public LoginPage checkAccountBanner() {
         headerName.shouldHave(text("Вход"));
         return this;
     }

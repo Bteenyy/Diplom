@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class ProfilePage {
     final SelenideElement telField = $("div[class='View-sc-qqgzek-0 kFdMNw']");
 
-    public ProfilePage headerProfileCheck() {
+    public ProfilePage checkHeaderProfile() {
         telField.shouldHave(text("Профиль"));
         return this;
     }

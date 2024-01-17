@@ -12,12 +12,12 @@ public class ProjectPage {
             projectMenuBut = $("div[class='Projects__SettingsButton-sc-15e16t1-1 iBanVL']"),
             projectDeleteBut = $("div[class='View-sc-qqgzek-0 gnjCbB'] span[class^='Text-sc-kheewc-0']");
 
-    public ProjectPage nameProjectCheck(String name) {
+    public ProjectPage checkNameProject(String name) {
         projectTable.shouldHave(text(name));
         return this;
     }
 
-    public ProjectPage projectDelete() {
+    public ProjectPage deleteProject() {
         projectMenuBut.click();
         projectDeleteBut.click();
         refresh();
@@ -25,7 +25,7 @@ public class ProjectPage {
         return this;
     }
 
-    public ProjectPage deleteProjectCheck(String name) {
+    public ProjectPage checkDeleteProject(String name) {
         projectTable.shouldNotHave(text(name));
         return this;
     }

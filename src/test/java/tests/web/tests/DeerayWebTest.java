@@ -27,15 +27,15 @@ public class DeerayWebTest extends TestBase {
     @DisplayName("Successful login on enter page")
     void successfulLoginTest() {
         step("Open home page", () ->
-                homePage.homePageOpen());
+                homePage.openHomePage());
         step("Click enter button", () ->
-                homePage.enterButtonClick());
+                homePage.clickEnterButton());
         step("Input account data", () ->
-                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
+                loginPage.inputLoginData(config.getEmail(), config.getPassword()));
         step("Make sure successful login by checking the profile title", () ->
                 accountPage.checkSuccessfulLogin(config.getEmail()));
         step("Click logout button", () ->
-                accountPage.logOut());
+                accountPage.clickLogoutButton());
     }
 
     @Test
@@ -43,17 +43,17 @@ public class DeerayWebTest extends TestBase {
     @DisplayName("Successful logout from account page")
     void successfulLogoutTest() {
         step("Open home page", () ->
-                homePage.homePageOpen());
+                homePage.openHomePage());
         step("Click enter button", () ->
-                homePage.enterButtonClick());
+                homePage.clickEnterButton());
         step("Input account data", () ->
-                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
+                loginPage.inputLoginData(config.getEmail(), config.getPassword()));
         step("Make sure successful login by checking the profile title", () ->
                 accountPage.checkSuccessfulLogin(config.getEmail()));
         step("Click logout button", () ->
-                accountPage.logOut());
+                accountPage.clickLogoutButton());
         step("Make sure successful logout by checking the account banner", () ->
-                loginPage.accountBannerCheck());
+                loginPage.checkAccountBanner());
     }
 
     @Test
@@ -61,17 +61,17 @@ public class DeerayWebTest extends TestBase {
     @DisplayName("Successful check profile header")
     void headerProfileCheck() {
         step("Open home page", () ->
-                homePage.homePageOpen());
+                homePage.openHomePage());
         step("Click enter button", () ->
-                homePage.enterButtonClick());
+                homePage.clickEnterButton());
         step("Input account data", () ->
-                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
+                loginPage.inputLoginData(config.getEmail(), config.getPassword()));
         step("Click profile button", () ->
-                accountPage.loginClick());
+                accountPage.clickLoginButton());
         step("Check profile header", () ->
-                profilePage.headerProfileCheck());
+                profilePage.checkHeaderProfile());
         step("Click logout button", () ->
-                accountPage.logOut());
+                accountPage.clickLogoutButton());
     }
 
     @Tag("web")
@@ -79,9 +79,9 @@ public class DeerayWebTest extends TestBase {
     @ParameterizedTest
     void homeNavTest(String category) {
         step("Open home page", () ->
-                homePage.homePageOpen());
+                homePage.openHomePage());
         step("The navigation bar contains an element {0} for the request {0}", () ->
-                homePage.navListCheck(category));
+                homePage.checkNavList(category));
     }
 
     @CsvSource(value = {
@@ -95,9 +95,9 @@ public class DeerayWebTest extends TestBase {
     @ParameterizedTest
     void changeLanguageTest(String language, String checkItem) {
         step("Open home page", () ->
-                homePage.homePageOpen());
+                homePage.openHomePage());
         step("Click enter button", () ->
-                homePage.enterButtonClick());
+                homePage.clickEnterButton());
         step("Choose language", () ->
                 accountPage.changeLanguage(language));
         step("Checking header after changing language", () ->
@@ -109,18 +109,18 @@ public class DeerayWebTest extends TestBase {
     @DisplayName("Successful create project")
     void successfulCreateProjectTest() {
         step("Open home page", () ->
-                homePage.homePageOpen());
+                homePage.openHomePage());
         step("Click enter button", () ->
-                homePage.enterButtonClick());
+                homePage.clickEnterButton());
         step("Input account data", () ->
-                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
+                loginPage.inputLoginData(config.getEmail(), config.getPassword()));
         step("Click project button", () ->
-                accountPage.projectButtonClick());
+                accountPage.clickProjectButton());
         step("Create project with api", () ->
                 createProject.createProject());
         refresh();
         step("Make sure successful create project by checking the name project", () ->
-                projectPage.nameProjectCheck(config.getProjectName()));
+                projectPage.checkNameProject(config.getProjectName()));
     }
 
     @Test
@@ -128,17 +128,17 @@ public class DeerayWebTest extends TestBase {
     @DisplayName("Successful delete project")
     void successfulDeleteProjectTest() {
         step("Open home page", () ->
-                homePage.homePageOpen());
+                homePage.openHomePage());
         step("Click enter button", () ->
-                homePage.enterButtonClick());
+                homePage.clickEnterButton());
         step("Input account data", () ->
-                loginPage.loginDataInput(config.getEmail(), config.getPassword()));
+                loginPage.inputLoginData(config.getEmail(), config.getPassword()));
         step("Click project button", () ->
-                accountPage.projectButtonClick());
+                accountPage.clickProjectButton());
         step("Click project delete button", () ->
-                projectPage.projectDelete());
+                projectPage.deleteProject());
         step("Make sure successful delete project by checking the name project must be away", () ->
-                projectPage.deleteProjectCheck(config.getProjectName()));
+                projectPage.checkDeleteProject(config.getProjectName()));
     }
 
 }

@@ -10,17 +10,17 @@ public class HomePage {
     final SelenideElement enterButton = $("div[class='header-login'] a"),
             navigationList = $("nav[class*='t-inline'] ul[class*='nav-menu']");
 
-    public HomePage homePageOpen() {
+    public HomePage openHomePage() {
         open("");
         return this;
     }
 
-    public HomePage enterButtonClick() {
+    public HomePage clickEnterButton() {
         enterButton.click();
         return this;
     }
 
-    public HomePage navListCheck(String name) {
+    public HomePage checkNavList(String name) {
         navigationList.shouldHave(text(name));
         return this;
     }

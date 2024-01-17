@@ -19,17 +19,17 @@ public class AccountPage {
         return this;
     }
 
-    public AccountPage logOut() {
+    public AccountPage clickLogoutButton() {
         logOut.click();
         return this;
     }
 
-    public AccountPage loginClick() {
+    public AccountPage clickLoginButton() {
         checkSuccessfulLogin.click();
         return this;
     }
 
-    public AccountPage projectButtonClick() {
+    public AccountPage clickProjectButton() {
         projectButton.click();
         return this;
     }
