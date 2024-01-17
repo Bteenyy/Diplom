@@ -129,7 +129,7 @@ gradle clean android -launch=browserstack
 
 <a id="jenkins"></a>
 
-## <img alt="Jenkins" height="25" src="media/Icons/Jenkins.svg" width="25"/></a><a name="Сборка"></a>[Сборка в Jenkins](https://jenkins.autotests.cloud/job/Project%20Diplom_22/)</a>
+## <img alt="Jenkins" height="25" src="media/icons/Jenkins.svg" width="25"/></a><a name="Сборка"></a>[Сборка в Jenkins](https://jenkins.autotests.cloud/job/Project%20Diplom_22/)</a>
 
 ____
 <p align="center">  
@@ -147,7 +147,7 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 
 <a id="allure"></a>
 
-## <img src="media/Icons/Allure.svg" title="Allure Report" width="4%"/> [Allure отчет](https://jenkins.autotests.cloud/job/Project%20Diplom_22/allure/)
+## <img src="media/icons/Allure.svg" title="Allure Report" width="4%"/> [Allure отчет](https://jenkins.autotests.cloud/job/Project%20Diplom_22/allure/)
 
 ### *Основная страница отчёта*
 
@@ -171,7 +171,7 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 
 <a id="allure-testops"></a>
 
-## <img src="media/Icons/Allure_TO.svg" title="Allure TestOps" width="4%"/> [Интеграция с Allure TestOps](https://allure.autotests.cloud/project/3950/dashboards)
+## <img src="media/icons/Allure_TO.svg" title="Allure TestOps" width="4%"/> [Интеграция с Allure TestOps](https://allure.autotests.cloud/project/3950/dashboards)
 
 ### *Allure TestOps Dashboard*
 
@@ -187,7 +187,7 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 
 <a id="jira"></a>
 
-## <img alt="Allure" height="25" src="media/Icons/Jira.svg" width="25"/></a> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1040">Интеграция с Jira</a>
+## <img alt="Allure" height="25" src="media/icons/Jira.svg" width="25"/></a> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1040">Интеграция с Jira</a>
 
 ____
 <p align="center">  
@@ -196,7 +196,7 @@ ____
 
 <a id="telegram"></a>
 
-## <img alt="Allure" height="25" src="media/Icons/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
+## <img alt="Allure" height="25" src="media/icons/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
 
 ____
 <p align="center">  
@@ -206,7 +206,7 @@ ____
 ____
 <a id="video"></a>
 
-## <img alt="Selenoid" height="25" src="media/Icons/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
+## <img alt="Selenoid" height="25" src="media/icons/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
 
 ____
 <p align="center">
