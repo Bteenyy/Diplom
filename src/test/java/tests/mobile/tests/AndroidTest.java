@@ -59,7 +59,7 @@ public class AndroidTest extends MobileTestBase {
                     .clickEnterButton();
         });
         step("Input correct email and password for successful login", () ->
-                enterPage.insertInputData(config.getEmail(), config.getPassword()));
+                enterPage.insertInputData(config.getEmailWeb(), config.getPasswordWeb()));
         step("Make sure successful login by checking the profile title", () ->
                 accountPage.checkAccountHeader());
     }

@@ -1,5 +1,6 @@
 package tests.api.api;
 
+import config.ApiConfig;
 import config.WebConfig;
 import helpers.TestData;
 import org.aeonbits.owner.ConfigFactory;
@@ -12,8 +13,8 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeleteProjectApi {
-    static final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
-    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmail(), config.getPassword());
+    final ApiConfig config = ConfigFactory.create(ApiConfig.class);
+    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi());
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
 

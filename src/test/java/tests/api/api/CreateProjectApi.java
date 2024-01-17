@@ -1,5 +1,6 @@
 package tests.api.api;
 
+import config.ApiConfig;
 import config.WebConfig;
 import helpers.TestData;
 import org.aeonbits.owner.ConfigFactory;
@@ -15,13 +16,13 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class CreateProjectApi {
-    static final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
-    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmail(), config.getPassword());
+    final ApiConfig config = ConfigFactory.create(ApiConfig.class);
+    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi());
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
 
     public void createProject() {
-        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(config.getProjectDescription(), config.getProjectName());
+        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(config.getProjectDescriptionApi(), config.getProjectNameApi());
         CreateProjectResponseModel createProjectResponseModel =
                 step("Execute a post-request for create project and record the response", () ->
                         given(loginTestRequestSpec)
