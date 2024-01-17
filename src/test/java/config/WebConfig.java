@@ -23,29 +23,25 @@ public interface WebConfig extends Config {
     @Key("remoteUrl")
     String getRemoteUrl();
 
-    @Key("email")
+    @Key("emailWeb")
     @DefaultValue("rashitsahbutdinov@yandex.ru")
-    String getEmail();
+    String getEmailWeb();
 
-    @Key("password")
+    @Key("passwordWeb")
     @DefaultValue("mdf9MsZs2bbM7kq_")
-    String getPassword();
+    String getPasswordWeb();
 
-    @Key("projectName")
+    @Key("projectNameWeb")
     @DefaultValue("qa.quru")
-    String getProjectName();
+    String getProjectNameWeb();
 
-    @Key("projectDescription")
+    @Key("projectDescriptionWeb")
     @DefaultValue("Diplom")
-    String getProjectDescription();
+    String getProjectDescriptionWeb();
 
     @Key("baseURL")
     @DefaultValue("https://deeray.com/")
     String getBaseURL();
-
-    @Key("baseURI")
-    @DefaultValue("https://api.deeray.com")
-    String getBaseURI();
 
 }
 

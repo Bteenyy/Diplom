@@ -22,7 +22,6 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = config.getBaseURL();
-       // RestAssured.baseURI = config.getBaseURI();
         Configuration.browser = config.getBrowserName();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.browserSize = config.getBrowserSize();
