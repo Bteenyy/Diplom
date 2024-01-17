@@ -1,5 +1,6 @@
 package tests.web.tests;
 
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -110,6 +111,7 @@ public class DeerayWebTest extends TestBase {
     // @Tag("web")
     @DisplayName("Successful create project")
     void successfulCreateProjectTest() {
+        AuthorizationApi authorizationApi = new AuthorizationApi();
         step("Open home page", () ->
                 homePage.openHomePage());
         step("Click enter button", () ->
@@ -119,7 +121,7 @@ public class DeerayWebTest extends TestBase {
         step("Click project button", () ->
                 accountPage.clickProjectButton());
         step("Create project with api", () ->
-                createProject.createProject(config.getProjectDescriptionWeb(),config.getProjectNameWeb(), new AuthorizationApi().authorization(new AuthorizationRequestModel(config.getEmailWeb(), config.getPasswordWeb()))));
+                createProject.createProject(config.getProjectDescriptionWeb(),config.getProjectNameWeb(), authorizationApi.authorization(config.getEmailWeb(),config.getPasswordWeb())));
         refresh();
         step("Make sure successful create project by checking the name project", () ->
                 projectPage.checkNameProject(config.getProjectNameWeb()));

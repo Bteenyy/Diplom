@@ -4,8 +4,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.api.api.AuthorizationApi;
+import tests.api.api.CreateProjectApi;
 import tests.api.api.DeleteProjectApi;
-import tests.api.models.*;
+import tests.api.models.AuthorizationRequestModel;
+import tests.api.models.AuthorizationResponseModel;
+import tests.api.models.CreateProjectResponseModel;
+import tests.api.models.DeleteProjectResponseModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -15,25 +19,15 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeerayApiTest extends ApiTestBase {
-    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi());
     final AuthorizationApi authorizationApi = new AuthorizationApi();
-    final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
+    final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(config.getEmailApi(), config.getPasswordApi());
 
     @Test
     @Tag("api")
     @DisplayName("Making a successful login request")
     void successfulLoginTest() {
-        AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi());
-        AuthorizationResponseModel responseModel =
-                step("Execute a post-request with the correct password and login and record the response.", () ->
-                        given(loginTestRequestSpec)
-                                .body(loginBodyModel)
-                                .when()
-                                .post("/v1/account/login")
-                                .then()
-                                .spec(loginTestResponseSpec)
-                                .statusCode(200)
-                                .extract().as(AuthorizationResponseModel.class));
+        AuthorizationResponseModel responseModel = step("Execute a post-request with correct password and login and record the response", () ->
+                authorizationApi.authorization(config.getEmailApi(), config.getPasswordApi()));
         step("Check the successful receipt of a token", () ->
                 assertFalse(responseModel.getData().getToken().isEmpty()));
     }
@@ -42,17 +36,9 @@ public class DeerayApiTest extends ApiTestBase {
     @Tag("api")
     @DisplayName("Making a unsuccessful login request")
     void unsuccessfulLoginTest() {
-        AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.randomEmail, data.randomPassword);
         AuthorizationResponseModel responseModel =
                 step("Execute a post-request with an incorrect password and login and record the response", () ->
-                        given(loginTestRequestSpec)
-                                .body(loginBodyModel)
-                                .when()
-                                .post("/v1/account/login")
-                                .then()
-                                .spec(loginTestResponseSpec)
-                                .statusCode(200)
-                                .extract().as(AuthorizationResponseModel.class));
+                        authorizationApi.authorization(data.randomEmail, data.randomPassword));
         step("Check that we have received an error message", () ->
                 assertFalse(responseModel.getMessage().isEmpty()));
     }
@@ -66,7 +52,7 @@ public class DeerayApiTest extends ApiTestBase {
                 step("Execute a post-request for logout and record the response", () ->
                         given(loginTestRequestSpec)
                                 .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                                .body(loginBodyModel)
+                                .body(new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi()))
                                 .when()
                                 .post("v1/account/logout")
                                 .then()
@@ -82,19 +68,10 @@ public class DeerayApiTest extends ApiTestBase {
     @DisplayName("Making a successful create project request")
     void createProjectTest() {
         DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
-        deleteProjectApi.deleteProject(authorizationResponseModel.getData().getToken());
-        CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(config.getProjectDescriptionApi(), config.getProjectNameApi());
+        deleteProjectApi.deleteProject(authorizationResponseModel);
         CreateProjectResponseModel createProjectResponseModel =
                 step("Execute a post-request for create project and record the response", () ->
-                        given(loginTestRequestSpec)
-                                .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                                .body(createProjectRequestModel)
-                                .when()
-                                .post("/v2/workspace/create")
-                                .then()
-                                .spec(loginTestResponseSpec)
-                                .statusCode(200)
-                                .extract().as(CreateProjectResponseModel.class));
+                        new CreateProjectApi().createProject(config.getProjectDescriptionApi(), config.getProjectNameApi(), authorizationResponseModel));
         step("Check the success create project", () ->
                 assertEquals(createProjectResponseModel.getData().getItem().getName(), config.getProjectNameApi()));
     }
@@ -104,19 +81,11 @@ public class DeerayApiTest extends ApiTestBase {
     @DisplayName("Making delete project wihen you have one project in workspace")
     void deleteProjectTest() {
         DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
-        deleteProjectApi.deleteProject(authorizationResponseModel.getData().getToken());
+        deleteProjectApi.deleteProject(authorizationResponseModel);
         DeleteProjectResponseModel deleteProjectResponseModel =
                 step("Execute a delete-request for delete project", () ->
-                        given(loginTestRequestSpec)
-                                .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                                .body(deleteProjectApi.projectId(authorizationResponseModel.getData().getToken()).getData().getItems().get(0))
-                                .when()
-                                .delete("/v2/workspace")
-                                .then()
-                                .spec(loginTestResponseSpec)
-                                .statusCode(200)
-                                .extract().as(DeleteProjectResponseModel.class));
+                        deleteProjectApi.deleteProject(authorizationResponseModel));
         step("Make sure we receive the warning message", () ->
-        assertEquals(deleteProjectResponseModel.getMessage(), "Нельзя удалить последний проект в личном кабинете"));
+                assertEquals(deleteProjectResponseModel.getMessage(), "Нельзя удалить последний проект в личном кабинете"));
     }
 }

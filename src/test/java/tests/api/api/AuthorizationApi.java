@@ -8,9 +8,10 @@ import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class AuthorizationApi {
-    public AuthorizationResponseModel authorization(AuthorizationRequestModel loginBodyModel) {
+    public AuthorizationResponseModel authorization(String email, String password) {
+        AuthorizationRequestModel authorizationRequestModel = new AuthorizationRequestModel(email, password);
         return given(loginTestRequestSpec)
-                .body(loginBodyModel)
+                .body(authorizationRequestModel)
                 .when()
                 .post("/v1/account/login")
                 .then()

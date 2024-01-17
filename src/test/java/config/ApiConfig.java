@@ -1,6 +1,7 @@
 package config;
 
 import org.aeonbits.owner.Config;
+
 @Config.Sources({
         "classpath:${launch}.properties"
 })
@@ -14,12 +15,13 @@ public interface ApiConfig extends Config {
     String getPasswordApi();
 
     @Key("projectNameApi")
-    @DefaultValue("qa.1231quru")
+    @DefaultValue("qa.q123123uru")
     String getProjectNameApi();
 
     @Key("projectDescriptionApi")
     @DefaultValue("Diplom")
     String getProjectDescriptionApi();
+
     @Key("baseURIApi")
     @DefaultValue("https://api.deeray.com")
     String getBaseUriApi();
