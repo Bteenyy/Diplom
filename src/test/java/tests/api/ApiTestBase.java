@@ -14,13 +14,7 @@ import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.WorkspaceResponseModel;
 
 public class ApiTestBase {
-    final TestData data = new TestData();
-    final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
-    final AuthorizationApi authorizationApi = new AuthorizationApi();
-    final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
-    final CreateProjectApi userApi = new CreateProjectApi();
-    final DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
-    final WorkspaceResponseModel workspaceResponseModel = deleteProjectApi.projectId();
+
 
 
     @BeforeAll

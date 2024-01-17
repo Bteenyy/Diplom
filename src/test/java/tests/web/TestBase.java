@@ -20,13 +20,6 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
-    final HomePage homePage = new HomePage();
-    final LoginPage loginPage = new LoginPage();
-    final AccountPage accountPage = new AccountPage();
-    final ProfilePage profilePage = new ProfilePage();
-    final TestData data = new TestData();
-    final CreateProjectApi createProject = new CreateProjectApi();
-    final ProjectPage projectPage = new ProjectPage();
     static final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
 
     @BeforeAll
