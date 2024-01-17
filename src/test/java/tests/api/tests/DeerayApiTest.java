@@ -5,10 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.api.api.AuthorizationApi;
 import tests.api.api.DeleteProjectApi;
-import tests.api.models.AuthorizationRequestModel;
-import tests.api.models.AuthorizationResponseModel;
-import tests.api.models.CreateProjectRequestModel;
-import tests.api.models.CreateProjectResponseModel;
+import tests.api.models.*;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -21,7 +18,6 @@ public class DeerayApiTest extends ApiTestBase {
     final AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi());
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final AuthorizationResponseModel authorizationResponseModel = authorizationApi.authorization(loginBodyModel);
-    final DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
 
     @Test
     @Tag("api")
@@ -61,6 +57,7 @@ public class DeerayApiTest extends ApiTestBase {
                 assertFalse(responseModel.getMessage().isEmpty()));
     }
 
+
     @Test
     @Tag("api")
     @DisplayName("Making a successful logout request")
@@ -84,6 +81,7 @@ public class DeerayApiTest extends ApiTestBase {
     @Tag("api")
     @DisplayName("Making a successful create project request")
     void createProjectTest() {
+        DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
         deleteProjectApi.deleteProject(authorizationResponseModel.getData().getToken());
         CreateProjectRequestModel createProjectRequestModel = new CreateProjectRequestModel(config.getProjectDescriptionApi(), config.getProjectNameApi());
         CreateProjectResponseModel createProjectResponseModel =
@@ -98,22 +96,27 @@ public class DeerayApiTest extends ApiTestBase {
                                 .statusCode(200)
                                 .extract().as(CreateProjectResponseModel.class));
         step("Check the success create project", () ->
-                assertEquals(createProjectResponseModel.getData().getItem().getName(), "qa.quru"));
+                assertEquals(createProjectResponseModel.getData().getItem().getName(), config.getProjectNameApi()));
     }
 
     @Test
     @Tag("api")
-    @DisplayName("Making a successful delete project")
-    void deleteProject() {
-        step("Execute a delete-request for delete project", () ->
-                given(loginTestRequestSpec)
-                        .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                        .body(deleteProjectApi.projectId(authorizationResponseModel.getData().getToken()).getData().getItems().get(0))
-                        .when()
-                        .delete("/v2/workspace")
-                        .then()
-                        .spec(loginTestResponseSpec)
-                        .statusCode(200)
-                        .extract().response());
+    @DisplayName("Making delete project wihen you have one project in workspace")
+    void deleteProjectTest() {
+        DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
+        deleteProjectApi.deleteProject(authorizationResponseModel.getData().getToken());
+        DeleteProjectResponseModel deleteProjectResponseModel =
+                step("Execute a delete-request for delete project", () ->
+                        given(loginTestRequestSpec)
+                                .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
+                                .body(deleteProjectApi.projectId(authorizationResponseModel.getData().getToken()).getData().getItems().get(0))
+                                .when()
+                                .delete("/v2/workspace")
+                                .then()
+                                .spec(loginTestResponseSpec)
+                                .statusCode(200)
+                                .extract().as(DeleteProjectResponseModel.class));
+        step("Make sure we receive the warning message", () ->
+        assertEquals(deleteProjectResponseModel.getMessage(), "Нельзя удалить последний проект в личном кабинете"));
     }
 }

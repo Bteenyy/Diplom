@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DeleteProjectBodyModel {
-    String id;
+public class DeleteProjectResponseModel {
+        String message;
 }

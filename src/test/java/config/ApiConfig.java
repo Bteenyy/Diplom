@@ -1,7 +1,9 @@
 package config;
 
 import org.aeonbits.owner.Config;
-
+@Config.Sources({
+        "classpath:${launch}.properties"
+})
 public interface ApiConfig extends Config {
     @Key("emailApi")
     @DefaultValue("rashitsahbutdinov@yandex.ru")
@@ -12,7 +14,7 @@ public interface ApiConfig extends Config {
     String getPasswordApi();
 
     @Key("projectNameApi")
-    @DefaultValue("qa.quru")
+    @DefaultValue("qa.1231quru")
     String getProjectNameApi();
 
     @Key("projectDescriptionApi")
