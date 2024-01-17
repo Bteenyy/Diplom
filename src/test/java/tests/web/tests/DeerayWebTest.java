@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import tests.api.api.AuthorizationApi;
 import tests.api.api.CreateProjectApi;
+import tests.api.models.AuthorizationRequestModel;
 import tests.web.pages.*;
 
 import static com.codeborne.selenide.Selenide.refresh;
@@ -117,7 +119,7 @@ public class DeerayWebTest extends TestBase {
         step("Click project button", () ->
                 accountPage.clickProjectButton());
         step("Create project with api", () ->
-                createProject.createProject(config.getProjectDescriptionWeb(),config.getProjectNameWeb()));
+                createProject.createProject(config.getProjectDescriptionWeb(),config.getProjectNameWeb(), new AuthorizationApi().authorization(new AuthorizationRequestModel(config.getEmailWeb(), config.getPasswordWeb()))));
         refresh();
         step("Make sure successful create project by checking the name project", () ->
                 projectPage.checkNameProject(config.getProjectNameWeb()));
