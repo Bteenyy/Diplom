@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "classpath:${launch}.properties"
 })
-public interface LocalConfig extends Config {
+public interface LocalMobileConfig extends Config {
     @Key("local.server")
     String localServer();
 

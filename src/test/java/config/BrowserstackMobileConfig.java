@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "classpath:${launch}.properties"
 })
-public interface BrowserstackConfig extends Config {
+public interface BrowserstackMobileConfig extends Config {
     @Key("browserstackAccessKey")
     String getAccessKey();
 

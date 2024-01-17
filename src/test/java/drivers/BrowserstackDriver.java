@@ -2,7 +2,7 @@ package drivers;
 
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.BrowserstackConfig;
+import config.BrowserstackMobileConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
-    protected static final BrowserstackConfig config = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+    protected static final BrowserstackMobileConfig config = ConfigFactory.create(BrowserstackMobileConfig.class, System.getProperties());
 
     @Nonnull
     @Override
