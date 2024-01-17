@@ -53,7 +53,7 @@ public class DeerayWebTest extends TestBase {
         step("Click logout button", () ->
                 accountPage.clickLogoutButton());
         step("Make sure successful logout by checking the account banner", () ->
-                loginPage.checkAccountBanner());
+                loginPage.checkAccountBanner("Вход"));
     }
 
     @Test
@@ -99,9 +99,9 @@ public class DeerayWebTest extends TestBase {
         step("Click enter button", () ->
                 homePage.clickEnterButton());
         step("Choose language", () ->
-                accountPage.changeLanguage(language));
+                loginPage.changeLanguage(language));
         step("Checking header after changing language", () ->
-                accountPage.changeLanguageCheck(checkItem));
+                loginPage.checkAccountBanner(checkItem));
     }
 
     @Test

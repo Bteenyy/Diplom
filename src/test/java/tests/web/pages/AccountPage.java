@@ -9,10 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class AccountPage {
     final SelenideElement checkSuccessfulLogin = $("div[class='View-sc-qqgzek-0 MenuItemStyled-sc-11xrj9h-0 clQVJy']"),
             logOut = $("svg[width='25'] use"),
-            projectButton = $("div[class='View-sc-qqgzek-0 MenuItemStyled-sc-11xrj9h-0 dHrPwE']"),
-            languageBar = $("div[class='View-sc-qqgzek-0 DropdownStyled-sc-1jkuymq-0 kjwpRp']"),
-            lnBut = $("div[class='View-sc-qqgzek-0 kMhCCs']"),
-            logHeader = $("span[class='Text-sc-kheewc-0 dzoeaH']");
+            projectButton = $("div[class='View-sc-qqgzek-0 MenuItemStyled-sc-11xrj9h-0 dHrPwE']");
 
     public AccountPage checkSuccessfulLogin(String email) {
         checkSuccessfulLogin.shouldHave(text(email));
@@ -34,14 +31,5 @@ public class AccountPage {
         return this;
     }
 
-    public AccountPage changeLanguage(String language) {
-        languageBar.click();
-        lnBut.$(byText(language)).click();
-        return this;
-    }
 
-    public AccountPage changeLanguageCheck(String text) {
-        logHeader.shouldHave(text(text));
-        return this;
-    }
 }

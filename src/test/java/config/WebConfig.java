@@ -40,11 +40,11 @@ public interface WebConfig extends Config {
     String getProjectDescription();
 
     @Key("baseURL")
-    @DefaultValue("Diplom")
+    @DefaultValue("https://deeray.com/")
     String getBaseURL();
 
     @Key("baseURI")
-    @DefaultValue("Diplom")
+    @DefaultValue("https://api.deeray.com")
     String getBaseURI();
 
 }
