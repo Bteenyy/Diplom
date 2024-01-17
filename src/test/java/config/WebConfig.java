@@ -43,5 +43,8 @@ public interface WebConfig extends Config {
     @DefaultValue("https://deeray.com/")
     String getBaseURL();
 
+    @Key("baseURI")
+    @DefaultValue("https://api.deeray.com")
+    String getBaseUri();
 }
 
