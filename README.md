@@ -19,22 +19,22 @@
 ## :computer: Использованный стек технологий
 
 <p align="center">
-<a href="https://www.jetbrains.com/ru-ru/idea/"><img width="6%" title="IntelliJ IDEA" src="media/Icons/Idea.svg" alt="Intelij_IDEA"></a>
-<a href="https://www.java.com/"><img width="6%" title="Java" src="media/Icons/Java.svg" alt="Java"></a>
-<a href="https://selenide.org/"><img width="6%" title="Selenide" src="media/Icons/Selenide.svg" alt="Selenide"></a>
-<a href="https://aerokube.com/selenoid/latest/"><img width="6%" title="Selenoid" src="media/Icons/Selenoid.svg" alt="Selenoid"></a>
-<a href="https://allurereport.org/"><img width="6%" title="Allure Report" src="media/Icons/Allure.svg" alt="Allure_Report"></a>
-<a href="https://qameta.io/"><img width="5%" title="Allure TestOps" src="media/Icons/Allure_TO.svg" alt="AllureTestOps"></a>
-<a href="https://gradle.org/"><img width="6%" title="Gradle" src="media/Icons/Gradle.svg" alt="Gradle"></a>
-<a href="https://junit.org/junit5/docs/current/user-guide/"><img width="6%" title="JUnit5" src="media/Icons/Junit5.svg" alt="JUnit5"></a>
-<a href="https://github.com/"><img width="6%" title="GitHub" src="media/Icons/GitHub.svg" alt="GitHub"></a>
-<a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/Icons/Jenkins.svg" alt="Jenkins"></a>
-<a href="https://tests.web.telegram.org/"><img width="6%" title="Telegram" src="media/Icons/Telegram.svg" alt="Telegram"></a>
-<a href="https://www.atlassian.com/ru/software/jira"><img width="5%" title="Jira" src="media/Icons/Jira.svg" alt="Jira"></a>
-<a href="https://rest-assured.io/"><img width="5%" title="RestAssured" src="media/Icons/RestAssured.svg" alt="Jira"></a>
-<a href="https://www.browserstack.com/"><img width="5%" title="Browserstack" src="media/Icons/Browserstack.svg" alt="Jira"></a>
-<a href="https://appium.io/"><img width="5%" title="Appium" src="media/Icons/Appium.svg" alt="Jira"></a>
-<a href="https://developer.android.com/studio"><img width="5%" title="Android_Studio" src="media/Icons/Android_Studio.svg" alt="Jira"></a>
+<a href="https://www.jetbrains.com/ru-ru/idea/"><img width="6%" title="IntelliJ IDEA" src="media/icons/Idea.svg" alt="Intelij_IDEA"></a>
+<a href="https://www.java.com/"><img width="6%" title="Java" src="media/icons/Java.svg" alt="Java"></a>
+<a href="https://selenide.org/"><img width="6%" title="Selenide" src="media/icons/Selenide.svg" alt="Selenide"></a>
+<a href="https://aerokube.com/selenoid/latest/"><img width="6%" title="Selenoid" src="media/icons/Selenoid.svg" alt="Selenoid"></a>
+<a href="https://allurereport.org/"><img width="6%" title="Allure Report" src="media/icons/Allure.svg" alt="Allure_Report"></a>
+<a href="https://qameta.io/"><img width="5%" title="Allure TestOps" src="media/icons/Allure_TO.svg" alt="AllureTestOps"></a>
+<a href="https://gradle.org/"><img width="6%" title="Gradle" src="media/icons/Gradle.svg" alt="Gradle"></a>
+<a href="https://junit.org/junit5/docs/current/user-guide/"><img width="6%" title="JUnit5" src="media/icons/Junit5.svg" alt="JUnit5"></a>
+<a href="https://github.com/"><img width="6%" title="GitHub" src="media/icons/GitHub.svg" alt="GitHub"></a>
+<a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/icons/Jenkins.svg" alt="Jenkins"></a>
+<a href="https://tests.web.telegram.org/"><img width="6%" title="Telegram" src="media/icons/Telegram.svg" alt="Telegram"></a>
+<a href="https://www.atlassian.com/ru/software/jira"><img width="5%" title="Jira" src="media/icons/Jira.svg" alt="Jira"></a>
+<a href="https://rest-assured.io/"><img width="5%" title="RestAssured" src="media/icons/RestAssured.svg" alt="Jira"></a>
+<a href="https://www.browserstack.com/"><img width="5%" title="Browserstack" src="media/icons/Browserstack.svg" alt="Jira"></a>
+<a href="https://appium.io/"><img width="5%" title="Appium" src="media/icons/Appium.svg" alt="Jira"></a>
+<a href="https://developer.android.com/studio"><img width="5%" title="Android_Studio" src="media/icons/Android_Studio.svg" alt="Jira"></a>
 </p>
 
 <a id="cases"></a>
@@ -133,7 +133,7 @@ gradle clean android -launch=browserstack
 
 ____
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/Lesson_17/"><img src="media/Screen/Jenkins.png" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/Lesson_17/"><img src="media/screen/Jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 ### **Параметры сборки в Jenkins:**
@@ -152,21 +152,21 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 ### *Основная страница отчёта*
 
 <p align="center">
-<img title="Allure Overview" src="media/Screen/Allure_report.png">
+<img title="Allure Overview" src="media/screen/Allure_report.png">
 </p>
 
 ### *Тест-кейсы*
 
 <p align="center">
-<img title="Test Results in Alure" src="media/Screen/Allure_result.png">
+<img title="Test Results in Alure" src="media/screen/Allure_result.png">
 </p>
 
 ### *Графики*
 
   <p align="center">  
-<img title="Allure Graphics" src="media/Screen/Gra_1.png" width="850">
+<img title="Allure Graphics" src="media/screen/Gra_1.png" width="850">
 
-<img title="Allure Graphics" src="media/Screen/Gra_2.png" width="850">  
+<img title="Allure Graphics" src="media/screen/Gra_2.png" width="850">  
 
 
 <a id="allure-testops"></a>
@@ -176,13 +176,13 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 ### *Allure TestOps Dashboard*
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="media/Screen/Dashboards.png" width="850">  
+<img title="Allure TestOps Dashboard" src="media/screen/Dashboards.png" width="850">  
 </p> 
 
 ### *Авто тест-кейсы*
 
 <p align="center">  
-<img title="Allure TestOps Tests" src="media/Screen/Allure_TO.png" width="850">  
+<img title="Allure TestOps Tests" src="media/screen/Allure_TO.png" width="850">  
 </p>
 
 <a id="jira"></a>
@@ -191,7 +191,7 @@ selenoidAddress (адрес удаленного сервера Selenoid)
 
 ____
 <p align="center">  
-<img title="Jira" src="media/Screen/Jira_report.png" width="850">  
+<img title="Jira" src="media/screen/Jira_report.png" width="850">  
 </p>
 
 <a id="telegram"></a>
@@ -200,7 +200,7 @@ ____
 
 ____
 <p align="center">  
-<img title="Telegram Bot Report" src="media/Screen/Telegram_report.png" width="550">  
+<img title="Telegram Bot Report" src="media/screen/Telegram_report.png" width="550">  
 </p>
 
 ____
@@ -210,5 +210,5 @@ ____
 
 ____
 <p align="center">
-<img title="Selenoid Video" src="media/Video/Video_report.gif" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="media/video/Video_report.gif" width="550" height="350"  alt="video">   
 </p>

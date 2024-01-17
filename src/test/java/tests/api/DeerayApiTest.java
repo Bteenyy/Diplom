@@ -23,7 +23,7 @@ public class DeerayApiTest extends ApiTestBase {
     void successfulLoginTest() {
         AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.email, data.password);
         AuthorizationResponseModel responseModel =
-                step("Execute a post-request for successful login and record the response", () ->
+                step("Execute a post-request with the correct password and login and record the response.", () ->
                         given(loginTestRequestSpec)
                                 .body(loginBodyModel)
                                 .when()
@@ -42,7 +42,7 @@ public class DeerayApiTest extends ApiTestBase {
     void unsuccessfulLoginTest() {
         AuthorizationRequestModel loginBodyModel = new AuthorizationRequestModel(data.randomEmail, data.randomPassword);
         AuthorizationResponseModel responseModel =
-                step("Execute a post-request for unsuccessful login and record the response", () ->
+                step("Execute a post-request with an incorrect password and login and record the response", () ->
                         given(loginTestRequestSpec)
                                 .body(loginBodyModel)
                                 .when()
@@ -51,7 +51,7 @@ public class DeerayApiTest extends ApiTestBase {
                                 .spec(loginTestResponseSpec)
                                 .statusCode(200)
                                 .extract().as(AuthorizationResponseModel.class));
-        step("Check the message about error", () ->
+        step("Check that we have received an error message", () ->
                 assertFalse(responseModel.getMessage().isEmpty()));
     }
 
