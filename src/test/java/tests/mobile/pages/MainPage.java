@@ -10,17 +10,17 @@ public class MainPage {
             companyBut = $x("//android.widget.TextView[@text=\"О компании\"]"),
             enterBut = $x("//android.widget.TextView[@text=\"Вход\"]");
 
-    public MainPage mainPageCheck() {
+    public MainPage checkMainPage() {
         banner.shouldBe(exist);
         return this;
     }
 
-    public MainPage companyButClick() {
+    public MainPage clickCompanyButton() {
         companyBut.click();
         return this;
     }
 
-    public MainPage enterButClick() {
+    public MainPage clickEnterButton() {
         enterBut.click();
         return this;
     }

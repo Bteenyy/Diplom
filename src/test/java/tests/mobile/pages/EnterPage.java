@@ -11,14 +11,14 @@ public class EnterPage {
             loginBut = $x("//android.widget.Button[@text=\"ВОЙТИ\"]"),
             errorMessage = $x("//android.widget.TextView[@text=\"Ошибка авторизации\"]");
 
-    public EnterPage enterDataInput(String email, String password) {
+    public EnterPage insertInputData(String email, String password) {
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
         loginBut.click();
         return this;
     }
 
-    public EnterPage errorMessageCheck() {
+    public EnterPage checkErrorMessage() {
         errorMessage.shouldBe(Condition.visible);
         return this;
     }

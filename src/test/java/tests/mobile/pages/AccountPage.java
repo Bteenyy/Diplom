@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class AccountPage {
     final SelenideElement emailHeader = $x("//android.widget.TextView[@text=\"rasitsahbutdinov915455@gmail.com\"]");
 
-    public AccountPage accountHeaderCheck() {
+    public AccountPage checkAccountHeader() {
         emailHeader.shouldBe(exist);
         return this;
     }

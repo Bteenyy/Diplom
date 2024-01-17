@@ -27,9 +27,9 @@ public class AndroidTest extends MobileTestBase {
     @DisplayName("Successful open website Deeray.com")
     public void MainPageTest() {
         step("Open website Deeray.com", () ->
-                googlePage.mainPageOpen());
+                googlePage.openMainPage());
         step("Check main page banner", () ->
-                mainPage.mainPageCheck());
+                mainPage.checkMainPage());
     }
 
     @SuppressWarnings("Convert2MethodRef")
@@ -38,13 +38,13 @@ public class AndroidTest extends MobileTestBase {
     @DisplayName("Successful open company page")
     public void CompanyPageTest() {
         step("Open website Deeray.com", () ->
-                googlePage.mainPageOpen());
+                googlePage.openMainPage());
         step("Click on the company button", () -> {
-            mainPage.mainPageCheck()
-                    .companyButClick();
+            mainPage.checkMainPage()
+                    .clickCompanyButton();
         });
         step("Check company page banner", () ->
-                companyPage.companyBannerCheck());
+                companyPage.checkCompanyBanner());
     }
 
     @SuppressWarnings("Convert2MethodRef")
@@ -53,15 +53,15 @@ public class AndroidTest extends MobileTestBase {
     @DisplayName("Successful login on enter page")
     public void successfulLoginTest() {
         step("Open website Deeray.com", () ->
-                googlePage.mainPageOpen());
+                googlePage.openMainPage());
         step("Click on the enter button", () -> {
-            mainPage.mainPageCheck()
-                    .enterButClick();
+            mainPage.checkMainPage()
+                    .clickEnterButton();
         });
         step("Input correct email and password for successful login", () ->
-                enterPage.enterDataInput(config.getEmail(), config.getPassword()));
+                enterPage.insertInputData(config.getEmail(), config.getPassword()));
         step("Make sure successful login by checking the profile title", () ->
-                accountPage.accountHeaderCheck());
+                accountPage.checkAccountHeader());
     }
 
     @SuppressWarnings("Convert2MethodRef")
@@ -70,15 +70,15 @@ public class AndroidTest extends MobileTestBase {
     @DisplayName("Unsuccessful login on enter page")
     public void unsuccessfulLoginTest() {
         step("Open website Deeray.com", () ->
-                googlePage.mainPageOpen());
+                googlePage.openMainPage());
         step("Click on the enter button", () -> {
-            mainPage.mainPageCheck()
-                    .enterButClick();
+            mainPage.checkMainPage()
+                    .clickEnterButton();
         });
         step("Input incorrect email and password for unsuccessful login", () ->
-                enterPage.enterDataInput(data.randomEmail, data.randomPassword));
+                enterPage.insertInputData(data.randomEmail, data.randomPassword));
         step("Make sure unsuccessful login by checking error message", () ->
-                enterPage.errorMessageCheck());
+                enterPage.checkErrorMessage());
     }
 
 }

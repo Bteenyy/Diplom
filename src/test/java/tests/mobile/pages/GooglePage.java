@@ -14,7 +14,7 @@ public class GooglePage {
             menuButton = $(id("com.android.chrome:id/menu_button")),
             checkbox = $(id("com.android.chrome:id/checkbox"));
 
-    public GooglePage mainPageOpen() {
+    public GooglePage openMainPage() {
         if (System.getProperty("launchMob").equals("browserstack")) {
             searchBoxText.click();
             urlBar.sendKeys("deeray.com");

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class CompanyPage {
     final SelenideElement companyBanner = $x("//android.view.View[@text=\"КОМПАНИЯ\"]");
 
-    public CompanyPage companyBannerCheck() {
+    public CompanyPage checkCompanyBanner() {
         companyBanner.shouldBe(visible);
         return this;
     }
