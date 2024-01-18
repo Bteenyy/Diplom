@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.refresh;
 
 public class ProjectPage {
     final SelenideElement projectTable = $("div[class$='Table']"),
-            projectMenuBut = $("div[class*='iBanVL']"),
+            projectMenuBut = $("div[class*='Projects__SettingsButton']"),
             projectDeleteBut = $("div[class*='gnjCbB'] span[class^='Text-sc-kheewc-0']");
 
     public ProjectPage checkNameProject(String name) {

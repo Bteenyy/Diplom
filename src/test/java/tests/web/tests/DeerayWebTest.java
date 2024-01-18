@@ -24,7 +24,7 @@ public class DeerayWebTest extends TestBase {
 
 
     @Test
-    @Tag("web")
+    //@Tag("web")
     @DisplayName("Successful login")
     void successfulLoginTest() {
         step("Open home page", homePage::openHomePage);
@@ -33,7 +33,6 @@ public class DeerayWebTest extends TestBase {
                 loginPage.inputLoginData(config.getEmailWeb(), config.getPasswordWeb()));
         step("Make sure successful login by checking the profile title", () ->
                 assertEquals(accountPage.checkSuccessfulLogin().getText(), config.getEmailWeb()));
-        //accountPage.checkSuccessfulLogin(config.getEmailWeb()));
         step("Click logout button", accountPage::clickLogoutButton);
     }
 
@@ -51,7 +50,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    // @Tag("web")
+    //@Tag("web")
     @DisplayName("Successful check profile header")
     void headerProfileCheckTest() {
         step("Open home page", homePage::openHomePage);
@@ -59,7 +58,9 @@ public class DeerayWebTest extends TestBase {
         step("Input account data", () ->
                 loginPage.inputLoginData(config.getEmailWeb(), config.getPasswordWeb()));
         step("Click profile button", accountPage::clickLoginButton);
-        step("Check profile header", profilePage::checkHeaderProfile);
+        step("Check profile header", () ->
+                assertEquals(profilePage.checkHeaderProfile().getText(), "Профиль"));
+        ;
         step("Click logout button", accountPage::clickLogoutButton);
     }
 
@@ -108,7 +109,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    // @Tag("web")
+    @Tag("web")
     @DisplayName("Successful delete project")
     void successfulDeleteProjectTest() {
         step("Open home page", homePage::openHomePage);

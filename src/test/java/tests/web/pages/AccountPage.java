@@ -3,21 +3,17 @@ package tests.web.pages;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.WebElement;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class AccountPage {
 
-    static final SelenideElement checkSuccessfulLogin = $("div[class*='lhPzUu']"),
-            logOut = $("svg[width='25'] use"),
-            projectButton = $("span[class*='ffOqsC']");
+    static final SelenideElement loginHeader = $x("//*[contains(text(), 'rashitsahbutdinov@yandex.ru')]"),
+            loginButton = $x("(//menu)[2]//div/div"),
+            logOut = $x("//*[name()='use'][contains(@*, '#sign-out')]"),
+            projectButton = $x("(//menu)[1]/div/div");
 
-    //  public AccountPage checkSuccessfulLogin(String email) {
-    //  checkSuccessfulLogin.shouldHave(text(email));
-    //   return this;
-    //}
     public WebElement checkSuccessfulLogin() {
-        return checkSuccessfulLogin;
+        return loginHeader;
     }
 
 
@@ -27,7 +23,7 @@ public class AccountPage {
     }
 
     public AccountPage clickLoginButton() {
-        checkSuccessfulLogin.click();
+        loginButton.click();
         return this;
     }
 

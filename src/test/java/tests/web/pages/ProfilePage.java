@@ -1,15 +1,14 @@
 package tests.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.WebElement;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class ProfilePage {
-    final SelenideElement telField = $("div[class*='kFdMNw']");
+    final SelenideElement telField = $x("//*[contains(text(), 'Профиль')]");
 
-    public ProfilePage checkHeaderProfile() {
-        telField.shouldHave(text("Профиль"));
-        return this;
+    public WebElement checkHeaderProfile() {
+        return telField;
     }
 }
