@@ -14,7 +14,6 @@ import tests.api.models.DeleteProjectResponseModel;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static tests.api.specs.Spec.loginTestRequestSpec;
 import static tests.api.specs.Spec.loginTestResponseSpec;
 
@@ -28,8 +27,8 @@ public class DeerayApiTest extends ApiTestBase {
     void successfulLoginTest() {
         AuthorizationResponseModel responseModel = step("Execute a post-request with correct password and login and record the response", () ->
                 authorizationApi.authorization(config.getEmailApi(), config.getPasswordApi()));
-        step("Check the successful receipt of a token", () ->
-                assertFalse(responseModel.getData().getToken().isEmpty()));
+        step("Check that the received token has 128 characters", () ->
+                assertEquals(responseModel.getData().getToken().length(), 128));
     }
 
     @Test
@@ -40,7 +39,7 @@ public class DeerayApiTest extends ApiTestBase {
                 step("Execute a post-request with an incorrect password and login and record the response", () ->
                         authorizationApi.authorization(data.randomEmail, data.randomPassword));
         step("Check that we have received an error message", () ->
-                assertFalse(responseModel.getMessage().isEmpty()));
+                assertEquals(responseModel.getMessage().length(), 18));
     }
 
 
