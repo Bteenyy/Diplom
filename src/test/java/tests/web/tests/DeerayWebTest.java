@@ -32,7 +32,6 @@ public class DeerayWebTest extends TestBase {
         step("Input account data", () ->
                 loginPage.inputLoginData(config.getEmailWeb(), config.getPasswordWeb()));
         step("Make sure successful login by checking the profile title", () ->
-                // assertEquals(accountPage.checkSuccessfulLogin(config.getEmailWeb()).getText(), config.getEmailWeb()));
                 accountPage.checkSuccessfulLogin(config.getEmailWeb()));
         step("Click logout button", accountPage::clickLogoutButton);
     }
@@ -45,9 +44,7 @@ public class DeerayWebTest extends TestBase {
         step("Click enter button", homePage::clickEnterButton);
         step("Input account data", () ->
                 loginPage.inputLoginData(config.getEmailWeb(), config.getPasswordWeb()));
-        step("Make sure successful login by checking the profile title", () ->
-                //   accountPage.checkSuccessfulLogin(config.getEmailWeb()));
-                step("Click logout button", accountPage::clickLogoutButton));
+        step("Click logout button", accountPage::clickLogoutButton);
         step("Make sure successful logout by checking the account banner", () ->
                 assertEquals(loginPage.checkAccountBanner().getText(), "Вход"));
     }

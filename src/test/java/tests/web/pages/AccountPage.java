@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AccountPage {
 
-    static final SelenideElement checkSuccessfulLogin = $("span[class*='lhPzUu']"),
+    static final SelenideElement checkSuccessfulLogin = $("div[class*='clQVJy']"),
             logOut = $("svg[width='25'] use"),
             projectButton = $("div[class*='dHrPwE']");
 
