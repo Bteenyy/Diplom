@@ -1,13 +1,14 @@
 package tests.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
-    final SelenideElement headerName = $("span[class='Text-sc-kheewc-0 dzoeaH']"),
+   final SelenideElement headerName = $("span[class='Text-sc-kheewc-0 dzoeaH']"),
             emailInput = $("input[placeholder='Email']"),
             passwordInput = $("input[type='password']"),
             loginBut = $("button"),
@@ -21,9 +22,9 @@ public class LoginPage {
         return this;
     }
 
-    public LoginPage checkAccountBanner(String text) {
-        headerName.shouldHave(text(text));
-        return this;
+    public WebElement checkAccountBanner() {
+        //headerName.shouldHave(text(text));
+        return headerName;
     }
     public LoginPage changeLanguage(String language) {
         languageBar.click();

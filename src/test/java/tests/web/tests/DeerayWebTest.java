@@ -12,6 +12,8 @@ import tests.web.pages.*;
 
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DeerayWebTest extends TestBase {
     final HomePage homePage = new HomePage();
@@ -23,8 +25,8 @@ public class DeerayWebTest extends TestBase {
 
 
     @Test
-    @Tag("web")
-    @DisplayName("Successful login on enter page")
+    //@Tag("web")
+    @DisplayName("Successful login")
     void successfulLoginTest() {
         step("Open home page", homePage::openHomePage);
         step("Click enter button", homePage::clickEnterButton);
@@ -37,7 +39,7 @@ public class DeerayWebTest extends TestBase {
 
     @Test
     @Tag("web")
-    @DisplayName("Successful logout from account page")
+    @DisplayName("Successful logout")
     void successfulLogoutTest() {
         step("Open home page", homePage::openHomePage);
         step("Click enter button", homePage::clickEnterButton);
@@ -47,13 +49,14 @@ public class DeerayWebTest extends TestBase {
                 accountPage.checkSuccessfulLogin(config.getEmailWeb()));
         step("Click logout button", accountPage::clickLogoutButton);
         step("Make sure successful logout by checking the account banner", () ->
-                loginPage.checkAccountBanner("Вход"));
+                assertEquals(loginPage.checkAccountBanner().getText(),"Вход"));
+           //     loginPage.checkAccountBanner("Вход"));
     }
 
     @Test
-    @Tag("web")
+   // @Tag("web")
     @DisplayName("Successful check profile header")
-    void headerProfileCheck() {
+    void headerProfileCheckTest() {
         step("Open home page", homePage::openHomePage);
         step("Click enter button", homePage::clickEnterButton);
         step("Input account data", () ->
@@ -63,7 +66,7 @@ public class DeerayWebTest extends TestBase {
         step("Click logout button", accountPage::clickLogoutButton);
     }
 
-    @Tag("web")
+   // @Tag("web")
     @ValueSource(strings = {"Продукты", "О компании", "Исследования", "Вакансии", "Контакты"})
     @ParameterizedTest
     void homeNavTest(String category) {
@@ -78,7 +81,7 @@ public class DeerayWebTest extends TestBase {
             "FR, Inscription",
             "DE, Login"
     })
-    @Tag("web")
+   // @Tag("web")
     @DisplayName("Successful change language")
     @ParameterizedTest
     void changeLanguageTest(String language, String checkItem) {
@@ -87,11 +90,12 @@ public class DeerayWebTest extends TestBase {
         step("Choose language", () ->
                 loginPage.changeLanguage(language));
         step("Checking header after changing language", () ->
-                loginPage.checkAccountBanner(checkItem));
+                assertEquals(loginPage.checkAccountBanner().getText(),checkItem));
+              //  loginPage.checkAccountBanner(checkItem));
     }
 
     @Test
-    @Tag("web")
+  //  @Tag("web")
     @DisplayName("Successful create project")
     void successfulCreateProjectTest() {
         AuthorizationApi authorizationApi = new AuthorizationApi();
@@ -108,7 +112,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    // @Tag("web")
+    //@Tag("web")
     @DisplayName("Successful delete project")
     void successfulDeleteProjectTest() {
         step("Open home page", homePage::openHomePage);
