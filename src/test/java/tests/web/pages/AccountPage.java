@@ -3,13 +3,12 @@ package tests.web.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AccountPage {
-    final SelenideElement checkSuccessfulLogin = $("div[class='View-sc-qqgzek-0 MenuItemStyled-sc-11xrj9h-0 clQVJy']"),
+    final SelenideElement checkSuccessfulLogin = $("div[class*='clQVJy']"),
             logOut = $("svg[width='25'] use"),
-            projectButton = $("div[class='View-sc-qqgzek-0 MenuItemStyled-sc-11xrj9h-0 dHrPwE']");
+            projectButton = $("div[class*='dHrPwE']");
 
     public AccountPage checkSuccessfulLogin(String email) {
         checkSuccessfulLogin.shouldHave(text(email));

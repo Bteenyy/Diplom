@@ -9,8 +9,8 @@ import static com.codeborne.selenide.Selenide.refresh;
 
 public class ProjectPage {
     final SelenideElement projectTable = $("div[class$='Table']"),
-            projectMenuBut = $("div[class='Projects__SettingsButton-sc-15e16t1-1 iBanVL']"),
-            projectDeleteBut = $("div[class='View-sc-qqgzek-0 gnjCbB'] span[class^='Text-sc-kheewc-0']");
+            projectMenuBut = $("div[class*='iBanVL']"),
+            projectDeleteBut = $("div[class*='gnjCbB'] span[class^='Text-sc-kheewc-0']");
 
     public ProjectPage checkNameProject(String name) {
         projectTable.shouldHave(text(name));
