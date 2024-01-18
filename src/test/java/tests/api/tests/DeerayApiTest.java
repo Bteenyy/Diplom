@@ -35,7 +35,7 @@ public class DeerayApiTest extends ApiTestBase {
         AuthorizationResponseModel responseModel =
                 step("Execute a post-request with an incorrect password and login and record the response", () ->
                         authorizationApi.authorization(data.randomEmail, data.randomPassword));
-        step("Check that we have received an error message", () ->
+        step("Check that the received message has 18 characters", () ->
                 assertEquals(responseModel.getMessage().length(), 18));
     }
 
@@ -66,7 +66,7 @@ public class DeerayApiTest extends ApiTestBase {
 
     @Test
     @Tag("api")
-    @DisplayName("Making delete project wihen you have one project in workspace")
+    @DisplayName("Making delete project when you have one project in workspace")
     void deleteProjectTest() {
         DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
         deleteProjectApi.deleteProject(authorizationResponseModel);
