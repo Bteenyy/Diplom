@@ -15,7 +15,7 @@ public interface ApiConfig extends Config {
     String getPasswordApi();
 
     @Key("projectNameApi")
-    @DefaultValue("qa.q123123uru")
+    @DefaultValue("qa.quru")
     String getProjectNameApi();
 
     @Key("projectDescriptionApi")

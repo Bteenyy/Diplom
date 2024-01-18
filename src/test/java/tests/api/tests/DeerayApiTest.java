@@ -7,16 +7,12 @@ import tests.api.api.AuthorizationApi;
 import tests.api.api.CreateProjectApi;
 import tests.api.api.DeleteProjectApi;
 import tests.api.api.LogoutApi;
-import tests.api.models.AuthorizationRequestModel;
 import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.CreateProjectResponseModel;
 import tests.api.models.DeleteProjectResponseModel;
 
 import static io.qameta.allure.Allure.step;
-import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static tests.api.specs.Spec.loginTestRequestSpec;
-import static tests.api.specs.Spec.loginTestResponseSpec;
 
 public class DeerayApiTest extends ApiTestBase {
     final AuthorizationApi authorizationApi = new AuthorizationApi();
