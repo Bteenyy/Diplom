@@ -13,7 +13,6 @@ import tests.web.pages.*;
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DeerayWebTest extends TestBase {
     final HomePage homePage = new HomePage();
