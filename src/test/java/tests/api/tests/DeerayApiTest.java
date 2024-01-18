@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import tests.api.api.AuthorizationApi;
 import tests.api.api.CreateProjectApi;
 import tests.api.api.DeleteProjectApi;
+import tests.api.api.LogoutApi;
 import tests.api.models.AuthorizationRequestModel;
 import tests.api.models.AuthorizationResponseModel;
 import tests.api.models.CreateProjectResponseModel;
@@ -49,15 +50,7 @@ public class DeerayApiTest extends ApiTestBase {
     void LogoutTest() {
         AuthorizationResponseModel responseModel =
                 step("Execute a post-request for logout and record the response", () ->
-                        given(loginTestRequestSpec)
-                                .header("X-Verification-Token", authorizationResponseModel.getData().getToken())
-                                .body(new AuthorizationRequestModel(config.getEmailApi(), config.getPasswordApi()))
-                                .when()
-                                .post("v1/account/logout")
-                                .then()
-                                .spec(loginTestResponseSpec)
-                                .statusCode(200)
-                                .extract().as(AuthorizationResponseModel.class));
+                        new LogoutApi().logout(authorizationResponseModel));
         step("Check the success of the request", () ->
                 assertEquals(responseModel.getCode(), 0));
     }
