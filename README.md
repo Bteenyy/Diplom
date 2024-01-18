@@ -37,7 +37,7 @@
 <a href="https://developer.android.com/studio"><img width="5%" title="Android_Studio" src="media/icons/Android_Studio.svg" alt="Jira"></a>
 </p>
 
-Автотесты в этом проекте написаны на `Java` использую `Selenide` фреймворк.\
+Автотесты в этом проекте написаны на `Java` использую `Selenide` фреймворк.
 
 `Gradle` - используется как инструмент автоматизации сборки.\
 `JUnit5` - для выполнения тестов.\
