@@ -13,6 +13,7 @@ import tests.web.pages.*;
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DeerayWebTest extends TestBase {
     final HomePage homePage = new HomePage();
@@ -32,12 +33,13 @@ public class DeerayWebTest extends TestBase {
         step("Input account data", () ->
                 loginPage.inputLoginData(config.getEmailWeb(), config.getPasswordWeb()));
         step("Make sure successful login by checking the profile title", () ->
+                // assertEquals(accountPage.checkSuccessfulLogin(config.getEmailWeb()).getText(), config.getEmailWeb()));
                 accountPage.checkSuccessfulLogin(config.getEmailWeb()));
         step("Click logout button", accountPage::clickLogoutButton);
     }
 
     @Test
-             @Tag("web")
+    @Tag("web")
     @DisplayName("Successful logout")
     void successfulLogoutTest() {
         step("Open home page", homePage::openHomePage);
@@ -45,11 +47,10 @@ public class DeerayWebTest extends TestBase {
         step("Input account data", () ->
                 loginPage.inputLoginData(config.getEmailWeb(), config.getPasswordWeb()));
         step("Make sure successful login by checking the profile title", () ->
-                accountPage.checkSuccessfulLogin(config.getEmailWeb()));
-        step("Click logout button", accountPage::clickLogoutButton);
+                //   accountPage.checkSuccessfulLogin(config.getEmailWeb()));
+                step("Click logout button", accountPage::clickLogoutButton));
         step("Make sure successful logout by checking the account banner", () ->
-                assertEquals(loginPage.checkAccountBanner().getText(),"Вход"));
-           //     loginPage.checkAccountBanner("Вход"));
+                assertEquals(loginPage.checkAccountBanner().getText(), "Вход"));
     }
 
     @Test
@@ -89,8 +90,7 @@ public class DeerayWebTest extends TestBase {
         step("Choose language", () ->
                 loginPage.changeLanguage(language));
         step("Checking header after changing language", () ->
-                assertEquals(loginPage.checkAccountBanner().getText(),checkItem));
-              //  loginPage.checkAccountBanner(checkItem));
+                assertEquals(loginPage.checkAccountBanner().getText(), checkItem));
     }
 
     @Test

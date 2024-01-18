@@ -22,7 +22,6 @@ public class LoginPage {
     }
 
     public WebElement checkAccountBanner() {
-        //headerName.shouldHave(text(text));
         return headerName;
     }
     public LoginPage changeLanguage(String language) {

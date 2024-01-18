@@ -10,6 +10,7 @@ public class HomePage {
     final SelenideElement enterButton = $("div[class='header-login'] a"),
             navigationList = $("nav[class*='t-inline'] ul[class*='nav-menu']");
 
+
     public HomePage openHomePage() {
         open("");
         return this;

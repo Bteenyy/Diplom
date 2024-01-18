@@ -6,7 +6,8 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AccountPage {
-    final SelenideElement checkSuccessfulLogin = $("div[class*='clQVJy']"),
+
+    static final SelenideElement checkSuccessfulLogin = $("span[class*='lhPzUu']"),
             logOut = $("svg[width='25'] use"),
             projectButton = $("div[class*='dHrPwE']");
 
