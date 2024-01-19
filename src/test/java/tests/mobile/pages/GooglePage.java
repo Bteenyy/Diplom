@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
 
 public class GooglePage {
-   final SelenideElement termsAccept = $(id("com.android.chrome:id/terms_accept")),
+    final SelenideElement termsAccept = $(id("com.android.chrome:id/terms_accept")),
             negativeButton = $(id("com.android.chrome:id/negative_button")),
             searchBoxText = $(id("com.android.chrome:id/search_box_text")),
             urlBar = $(id("com.android.chrome:id/url_bar")),
