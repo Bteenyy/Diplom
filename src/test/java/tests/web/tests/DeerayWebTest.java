@@ -26,7 +26,7 @@ public class DeerayWebTest extends TestBase {
 
 
     @Test
-    //@Tag("web")
+    @Tag("web")
     @DisplayName("Successful login")
     void successfulLoginTest() {
         step("Open home page", homePage::openHomePage);
@@ -39,7 +39,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    //@Tag("web")
+    @Tag("web")
     @DisplayName("Successful logout")
     void successfulLogoutTest() {
         step("Open home page", homePage::openHomePage);
@@ -52,7 +52,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    //@Tag("web")
+    @Tag("web")
     @DisplayName("Successful check profile header")
     void headerProfileCheckTest() {
         step("Open home page", homePage::openHomePage);
@@ -65,7 +65,7 @@ public class DeerayWebTest extends TestBase {
         step("Click logout button", accountPage::clickLogoutButton);
     }
 
-    //@Tag("web")
+    @Tag("web")
     @ValueSource(strings = {"Продукты", "О компании", "Исследования", "Вакансии", "Контакты"})
     @ParameterizedTest
     void homeNavTest(String category) {
@@ -93,7 +93,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    // @Tag("web")
+    @Tag("web")
     @DisplayName("Successful create project")
     void successfulCreateProjectTest() {
         AuthorizationApi authorizationApi = new AuthorizationApi();
@@ -112,7 +112,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    // @Tag("web")
+    @Tag("web")
     @DisplayName("Successful delete project")
     void successfulDeleteProjectTest() {
         step("Open home page", homePage::openHomePage);
