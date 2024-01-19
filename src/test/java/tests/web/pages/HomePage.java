@@ -1,8 +1,9 @@
 package tests.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.WebElement;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -21,8 +22,7 @@ public class HomePage {
         return this;
     }
 
-    public HomePage checkNavList(String name) {
-        navigationList.shouldHave(text(name));
-        return this;
+    public WebElement checkNavList(String name) {
+        return navigationList.$(byText(name));
     }
 }
