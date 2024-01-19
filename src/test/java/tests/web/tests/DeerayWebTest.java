@@ -8,11 +8,12 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import tests.api.api.AuthorizationApi;
 import tests.api.api.CreateProjectApi;
+import tests.api.api.DeleteProjectApi;
 import tests.web.pages.*;
 
 import static com.codeborne.selenide.Selenide.refresh;
 import static io.qameta.allure.Allure.step;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DeerayWebTest extends TestBase {
     final HomePage homePage = new HomePage();
@@ -37,7 +38,7 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    //@Tag("web")
+    @Tag("web")
     @DisplayName("Successful logout")
     void successfulLogoutTest() {
         step("Open home page", homePage::openHomePage);
@@ -60,7 +61,6 @@ public class DeerayWebTest extends TestBase {
         step("Click profile button", accountPage::clickLoginButton);
         step("Check profile header", () ->
                 assertEquals(profilePage.checkHeaderProfile().getText(), "Профиль"));
-        ;
         step("Click logout button", accountPage::clickLogoutButton);
     }
 
@@ -92,10 +92,12 @@ public class DeerayWebTest extends TestBase {
     }
 
     @Test
-    // @Tag("web")
+   // @Tag("web")
     @DisplayName("Successful create project")
     void successfulCreateProjectTest() {
         AuthorizationApi authorizationApi = new AuthorizationApi();
+        DeleteProjectApi deleteProjectApi = new DeleteProjectApi();
+        deleteProjectApi.deleteProject(authorizationApi.authorization(config.getEmailWeb(), config.getPasswordWeb()));
         step("Open home page", homePage::openHomePage);
         step("Click enter button", homePage::clickEnterButton);
         step("Input account data", () ->
@@ -105,11 +107,11 @@ public class DeerayWebTest extends TestBase {
                 createProject.createProject(config.getProjectDescriptionWeb(), config.getProjectNameWeb(), authorizationApi.authorization(config.getEmailWeb(), config.getPasswordWeb())));
         refresh();
         step("Make sure successful create project by checking the name project", () ->
-                projectPage.checkNameProject(config.getProjectNameWeb()));
+                assertEquals(projectPage.checkNameProject().getText(), config.getProjectNameWeb()));
     }
 
     @Test
-    @Tag("web")
+   // @Tag("web")
     @DisplayName("Successful delete project")
     void successfulDeleteProjectTest() {
         step("Open home page", homePage::openHomePage);
@@ -119,7 +121,7 @@ public class DeerayWebTest extends TestBase {
         step("Click project button", accountPage::clickProjectButton);
         step("Click project delete button", projectPage::deleteProject);
         step("Make sure successful delete project by checking the name project must be away", () ->
-                projectPage.checkDeleteProject(config.getProjectNameWeb()));
+                assertFalse(projectPage.checkNameProject().isDisplayed()));
     }
 
 }

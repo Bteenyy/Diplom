@@ -4,11 +4,11 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage {
-   final SelenideElement headerName = $("span[class*='dzoeaH']"),
-            emailInput = $("input[placeholder='Email']"),
+    final SelenideElement headerName = $x("//div[2]/div[2]/div[1]/span"),
+    emailInput = $("input[placeholder='Email']"),
             passwordInput = $("input[type='password']"),
             loginBut = $("button"),
             languageBar = $("div[class*='kjwpRp']"),
@@ -24,6 +24,7 @@ public class LoginPage {
     public WebElement checkAccountBanner() {
         return headerName;
     }
+
     public LoginPage changeLanguage(String language) {
         languageBar.click();
         lnBut.$(byText(language)).click();
