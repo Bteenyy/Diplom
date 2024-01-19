@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class ProfilePage {
     final SelenideElement telField = $x("//*[contains(text(), 'Профиль')]");
 
-    public WebElement checkHeaderProfile() {
+    public WebElement getHeaderProfile() {
         return telField;
     }
 }

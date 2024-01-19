@@ -22,7 +22,7 @@ public class LoginPage {
         return this;
     }
 
-    public WebElement checkAccountBanner() {
+    public WebElement getAccountBanner() {
         return headerName;
     }
 

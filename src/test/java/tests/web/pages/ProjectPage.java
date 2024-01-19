@@ -11,7 +11,7 @@ public class ProjectPage {
             projectMenuBut = $("div[class*='Projects__SettingsButton']"),
             projectDeleteBut = $("div[class*='gnjCbB'] span[class^='Text-sc-kheewc-0']");
 
-    public WebElement checkNameProject() {
+    public WebElement getNameProject() {
         return projectTable;
     }
 

@@ -12,7 +12,7 @@ public class AccountPage {
             logOut = $x("//*[name()='use'][contains(@*, '#sign-out')]"),
             projectButton = $x("(//menu)[1]/div/div");
 
-    public WebElement checkSuccessfulLogin() {
+    public WebElement getLoginHeader() {
         return loginHeader;
     }
 

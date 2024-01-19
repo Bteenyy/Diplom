@@ -3,11 +3,12 @@ package tests.web.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.open;
 
 public class HomePage {
     final SelenideElement enterButton = $x("//*[contains(text(), 'Вход')]"),
-            navigationList = $("nav[class*='t-inline'] ul[class*='nav-menu']");
+            navigationList = $x("//div[2]/div/nav/ul");
 
 
     public HomePage openHomePage() {
