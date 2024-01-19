@@ -70,7 +70,7 @@ public class DeerayWebTest extends TestBase {
     @ParameterizedTest
     void homeNavTest(String category) {
         step("Open home page", homePage::openHomePage);
-        step("The navigation bar contains an element {0} for the request {0}", () ->
+        step("The navigation bar contains an element" + category, () ->
                 assertEquals(homePage.checkNavList(category).getText(), category));
     }
 
